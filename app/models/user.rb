@@ -5,4 +5,12 @@ class User < ApplicationRecord
 
   attr_reader :password
   before_validation :ensure_session_token
+
+  has_many :images
+
+  has_many :followers,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: 'User'
+
 end
