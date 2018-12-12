@@ -13,10 +13,15 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    // this.props.errors = [];
+    // this.errors = [];
+    this.props.removeErrors();
+  }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state)
-      .then(this.props.history.push("/"));
   }
 
   update(field){

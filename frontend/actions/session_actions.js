@@ -34,3 +34,7 @@ export const logout = () => dispatch => (
   APIUtil.logout()
     .then(user => dispatch(logoutCurrentUser()))
 );
+
+export const removeErrors = () => dispatch => (
+  dispatch(receiveErrors([]))
+);

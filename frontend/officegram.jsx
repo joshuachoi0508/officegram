@@ -11,12 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
 
-  window.logout = logout;
-
-  //testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-
   if (window.currentUser) {
     const preloadedState = {
       entities: {
