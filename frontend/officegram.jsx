@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store'
+import configureStore from './store/store';
+import Root from './components/root';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.dispatch = store.dispatch;
 
   ReactDOM.render(
-    <h1>OfficeGram TO BE MOUNTED SOON</h1>,
+    <Root store={store}/>,
     root
   )
 })
