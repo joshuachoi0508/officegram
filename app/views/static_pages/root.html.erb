@@ -1,3 +1,9 @@
+<script type="text/javascript">
+   window.images = {
+     login_logo: "<%= asset_path('login_page_image.png') %>",
+   }
+ </script>
+
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = <%= render(
@@ -6,6 +12,7 @@
     ).html_safe %>
   </script>
 <% end %>
+
 
 <main id="root">
 </main>

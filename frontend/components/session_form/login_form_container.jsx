@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors }, ownProps) => {
   return {
     errors: errors.session,
-    formType: 'login',
+    history: ownProps.history,
     navLink: <Link to="/signup">sign up instead</Link>
   };
 };

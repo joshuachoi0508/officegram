@@ -16,6 +16,7 @@ class SignupForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state)
+      .then(this.props.history.push("/"));
   }
 
   update(field){
@@ -36,41 +37,43 @@ class SignupForm extends React.Component {
 
   render(){
     return(
-      <div className="signup-form-container">
-        <img />
-        <div className="signup-form">
-          <div className="form-container">
-            <form className="form-box" onSubmit={this.handleSubmit}>
-              <h1 className="login-title-font">OfficeGram</h1>
-              <h2 className="login-description-font">Sign up to see photos and videos of your friends</h2>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="signup-input"
-                placeholder="username"
-                />
-              <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="signup-input"
-                placeholder="password"
-                />
-              <br/>
-              <input type="submit"
-                value="Sign up"
-                className="submit-button"
-                 />
-              {this.renderErrors()}
-            </form>
-          </div>
-          <div className="link-to-login">
-            <p>Already have an account?
-              <Link to="/login" className="redirect"> Log in</Link>
-            </p>
+        <div className="signup">
+          <div className="signup-form">
+            <img className="session-logo" src={window.images.login_logo} />
+              <div className="form-and-redirect">
+              <div className="form-container">
+                <form className="form-box" onSubmit={this.handleSubmit}>
+                  <h1 className="login-title-font">OfficeGram</h1>
+                  <h2 className="login-description-font">Sign up to see photos and videos of your friends</h2>
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    className="signup-input"
+                    placeholder="username"
+                    />
+                  <br/>
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className="signup-input"
+                    placeholder="password"
+                    />
+                  <br/>
+                  <input type="submit"
+                    value="Sign up"
+                    className="submit-button"
+                     />
+                  {this.renderErrors()}
+                </form>
+              </div>
+              <div className="link-to-login">
+                <p>Already have an account?
+                  <Link to="/login" className="redirect"> Log in</Link>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     )
   }
 }

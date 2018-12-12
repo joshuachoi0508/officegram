@@ -13,6 +13,10 @@ html {
   width: 220px;
 }
 
+.submit-button:hover {
+  cursor: pointer;
+}
+
 .demo-login-submit {
   font-family: 'helvetica', bold;
   font-size: 15px;
@@ -22,6 +26,10 @@ html {
   margin-bottom: 20px;
   border-radius: 3px;
   width: 220px;
+}
+
+.demo-login-submit {
+  cursor: pointer;
 }
 
 .login-input {
@@ -48,14 +56,14 @@ html {
  }
 
  .link-to-signup {
+   display: flex;
    font-family: 'helvetica', bold;
    font-size: 15px;
-   display: flex;
    border: 1px solid lightgray;
    background-color: white;
    justify-content: center;
    text-align: center;
-   margin: auto;
+   flex-direction: column;
    margin-top: 10px;
    width: 348px;
  }
@@ -89,4 +97,17 @@ html {
 .error-list {
   list-style-type: none;
   justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 100px;
+}
+
+.session-logo {
+  width: 22%;
+  height: 22%;
 }
