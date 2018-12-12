@@ -1,4 +1,8 @@
-import {
-  RECEIVE_CURRENT_USER,
-  RECEIVE_SESSION_ERRORS
-} from '../actions/session_actions';
+import sessionErrorsReducer from './session_errors_reducer';
+import { combineReducers } from 'redux';
+
+const errorsReducer = combineReducers({
+  session: sessionErrorsReducer
+});
+
+export default errorsReducer;
