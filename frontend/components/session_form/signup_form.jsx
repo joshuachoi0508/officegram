@@ -36,20 +36,36 @@ class SignupForm extends React.Component {
   render(){
     return(
       <div className="signup-form-container">
-        <form className="signup-form" onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update("username")}
-            className="signup-input"
-            />
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            className="signup-input"
-            />
-          <input type="submit" value="Sign up" />
-        </form>
+        <img />
+        <div className="signup-form">
+          <div className="signup-form-container">
+            <form className="signup-form" onSubmit={this.handleSubmit}>
+              <h1 className="login-title-font">OfficeGram</h1>
+              <h2 className="login-description-font">Sign up to see photos and videos of your friends</h2>
+              {this.renderErrors()}
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                className="signup-input"
+                placeholder="username"
+                />
+              <br/>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                className="signup-input"
+                placeholder="password"
+                />
+              <br/>
+              <input type="submit" value="Sign up" />
+            </form>
+          </div>
+          <div className="link-to-signup">
+            <p>Already have an account?
+              <Link to="/login"> Log in</Link>
+            </p>
+          </div>
+        </div>
       </div>
     )
   }

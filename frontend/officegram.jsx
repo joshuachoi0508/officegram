@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { logout } from './actions/session_actions'
+
+//testing
+import { logout } from './util/session_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
 
+  window.logout = logout;
+
+  //testing
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-
-  window.logout = logout;
 
   if (window.currentUser) {
     const preloadedState = {
