@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props){
@@ -23,9 +24,9 @@ class SignupForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="submit-errors">
             { error }
           </li>
         ))}
@@ -38,11 +39,10 @@ class SignupForm extends React.Component {
       <div className="signup-form-container">
         <img />
         <div className="signup-form">
-          <div className="signup-form-container">
-            <form className="signup-form" onSubmit={this.handleSubmit}>
+          <div className="form-container">
+            <form className="form-box" onSubmit={this.handleSubmit}>
               <h1 className="login-title-font">OfficeGram</h1>
               <h2 className="login-description-font">Sign up to see photos and videos of your friends</h2>
-              {this.renderErrors()}
               <input type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
@@ -57,12 +57,16 @@ class SignupForm extends React.Component {
                 placeholder="password"
                 />
               <br/>
-              <input type="submit" value="Sign up" />
+              <input type="submit"
+                value="Sign up"
+                className="submit-button"
+                 />
+              {this.renderErrors()}
             </form>
           </div>
-          <div className="link-to-signup">
+          <div className="link-to-login">
             <p>Already have an account?
-              <Link to="/login"> Log in</Link>
+              <Link to="/login" className="redirect"> Log in</Link>
             </p>
           </div>
         </div>

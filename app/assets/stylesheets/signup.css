@@ -1,0 +1,25 @@
+html {
+  background-color: #fafafa;
+}
+
+.signup-input {
+  font-family: 'helvetica';
+  padding: 6px;
+  background-color: #fafafa;
+  width: 200px;
+  margin: 3px;
+  border: 1px solid lightgray;
+}
+
+ .link-to-login {
+   font-family: 'helvetica', bold;
+   font-size: 15px;
+   display: flex;
+   border: 1px solid lightgray;
+   background-color: white;
+   justify-content: center;
+   text-align: center;
+   margin: auto;
+   margin-top: 10px;
+   width: 348px;
+ }
