@@ -8,16 +8,6 @@ class User < ApplicationRecord
 
   has_many :images
 
-  has_many :followers,
-    primary_key: :user_id,
-    foreign_key: :follower_id,
-    class_name: 'User'
-
-  has_many :followings,
-    primary_key: :follower_id,
-    foreign_key: :user_id,
-    class_name: 'User'
-
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
