@@ -21,6 +21,9 @@ html {
    text-align: center;
    margin-top: 10px;
    width: 348px;
+   padding: 0px;
+   padding-top: 13px;
+   padding-bottom: 13px;
  }
 
  .signup-form {
@@ -29,4 +32,14 @@ html {
    align-items: center;
    flex-direction: row;
    margin-top: 100px;
+ }
+
+ .signup-title-font {
+   display: block;
+   font-size: 2em;
+   margin-top: 0.67em;
+   margin-bottom: 0.67em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;;
  }

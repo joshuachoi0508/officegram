@@ -4,7 +4,9 @@ class IndexComponent extends React.Component {
 
   render(){
     return(
-      <h1>THIS IS INDEX</h1>
+      <div className="index">
+        <h1>THIS IS INDEX</h1>
+      </div>
     )
   }
 

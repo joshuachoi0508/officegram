@@ -65,7 +65,10 @@ html {
    text-align: center;
    flex-direction: column;
    margin-top: 10px;
-   width: 348px;
+   width: 335px;
+   padding: 7px;
+   padding-top: 13px;
+   padding-bottom: 13px;
  }
 
 .login-title-font {
@@ -110,4 +113,14 @@ html {
 .session-logo {
   width: 22%;
   height: 22%;
+}
+
+.login-title-font {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;;
 }
