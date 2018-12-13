@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+.left-nav-bar {
+  margin-left: 200px
+}
+
+.right-nav-bar {
+  margin-right: 200px
+}
+
 .main-logo {
   width: 100px;
 }

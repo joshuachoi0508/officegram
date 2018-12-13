@@ -7,7 +7,7 @@ class NavBar extends React.Component {
     return(
       <div className="nav-bar">
         <ul className="nav-bar-items">
-          <li>
+          <li className="left-nav-bar">
             <Link to="/">
               <img className="main-logo" src={window.images.main_logo} />
             </Link>
@@ -15,9 +15,10 @@ class NavBar extends React.Component {
           <li>
             <input type="text"
               placeholder="               &#128269; search"
-              className="search-input"/>
+              className="search-input"/
+              >
           </li>
-          <li>
+          <li className="right-nav-bar">
             <img className="profile-logo" src={window.images.profile_logo} />
           </li>
         </ul>
