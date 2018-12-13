@@ -1,4 +1,7 @@
 .index {
   display: flex;
   background-color: #fafafa;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
 }

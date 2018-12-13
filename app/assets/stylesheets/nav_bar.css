@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.main-logo:active {
+  opacity: 0.5;
+}
+
 .search-input {
   font-family: 'helvetica';
   background-color: #fafafa;
@@ -34,4 +38,8 @@
 
 .profile-logo:hover {
   cursor: pointer;
+}
+
+.profile-logo:active {
+  opacity: 0.5;
 }
