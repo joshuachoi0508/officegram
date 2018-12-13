@@ -85,7 +85,7 @@ html {
 }
 
 .submit-errors {
-  font-family: sans-serif;
+  font-family: 'helvetica';
   color: red;
   background-color: white;
   font-size: 14px;

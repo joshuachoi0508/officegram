@@ -14,8 +14,6 @@ class SignupForm extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.errors = [];
-    // this.errors = [];
     this.props.removeErrors();
   }
 
