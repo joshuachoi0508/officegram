@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
@@ -7,13 +8,17 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         <ul className="nav-bar-items">
           <li>
-            LEFT
+            <Link to="/">
+              <img className="main-logo" src={window.images.main_logo} />
+            </Link>
           </li>
           <li>
-            CENTER
+            <input type="text"
+              placeholder="               &#128269; search"
+              className="search-input"/>
           </li>
           <li>
-            RIGHT
+            <img className="profile-logo" src={window.images.profile_logo} />
           </li>
         </ul>
       </div>

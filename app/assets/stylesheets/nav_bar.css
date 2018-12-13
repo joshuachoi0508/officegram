@@ -2,6 +2,36 @@
   display: flex;
   background-color: white;
   border-bottom: 1px solid lightgray;
-  padding: 26px 20px;
-  justify-content: space-between;
+  padding: 6px 8px;
+  padding-top: 9px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-logo {
+  width: 100px;
+}
+
+.main-logo:hover {
+  cursor: pointer;
+}
+
+.search-input {
+  font-family: 'helvetica';
+  background-color: #fafafa;
+  padding: 6px;
+  width: 199px;
+  height: 18px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.profile-logo {
+  width: 51px;
+}
+
+.profile-logo:hover {
+  cursor: pointer;
 }
