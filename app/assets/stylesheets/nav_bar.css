@@ -1,5 +1,7 @@
-.nav-bar {
+.nav-bar-items {
   display: flex;
   background-color: white;
   border-bottom: 1px solid lightgray;
+  padding: 26px 20px;
+  justify-content: space-between;
 }

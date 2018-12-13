@@ -5,8 +5,16 @@ class NavBar extends React.Component {
   render(){
     return(
       <div className="nav-bar">
-        <ul className="">
-          HELLOW
+        <ul className="nav-bar-items">
+          <li>
+            LEFT
+          </li>
+          <li>
+            CENTER
+          </li>
+          <li>
+            RIGHT
+          </li>
         </ul>
       </div>
     )

@@ -76,6 +76,8 @@ html {
 }
 
 .login-description-font {
+  display: flex;
+  margin: 22px;
   font-family: 'helvetica';
   font-weight: normal;
   font-size: 15px;
@@ -87,7 +89,6 @@ html {
   color: red;
   background-color: white;
   font-size: 14px;
-  margin-right: 38px;
 }
 
 .redirect {
@@ -107,12 +108,11 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-top: 100px;
+  background: #fafafa;
 }
 
 .session-logo {
-  width: 22%;
-  height: 22%;
+  width: 454px;
 }
 
 .login-title-font {
