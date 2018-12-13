@@ -4,16 +4,16 @@
   border-bottom: 1px solid lightgray;
   padding: 6px 8px;
   padding-top: 9px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .left-nav-bar {
-  margin-left: 200px
+  margin-right: 20%;
 }
 
 .right-nav-bar {
-  margin-right: 200px
+  margin-left: 20%;
 }
 
 .main-logo {
@@ -33,7 +33,7 @@
   background-color: #fafafa;
   padding: 6px;
   width: 199px;
-  height: 18px;
+  height: 14px;
   border: 1px solid lightgray;
   border-radius: 3px;
   font-size: 15px;
