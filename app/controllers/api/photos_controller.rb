@@ -1,3 +1,3 @@
-class Api::PhotosController < ApplicationController
-  
+class Api::ImagesController < ApplicationController
+
 end
