@@ -36,18 +36,36 @@ class Upload extends React.Component {
       formData.append('image[image]', this.state.imageFile);
     }
 
-    this.props.createImage(formData).then(this.props.history.push("/profile"))
+    this.props.createImage(formData).then(() => this.props.history.push("/profile"))
   }
 
   render(){
     return(
-      <div className="profile">
-        <p>HELLO THIS IS UPLOAD</p>
-        <form onSubmit={this.handleSubmit}>
-          <input className="upload-file" type="file" onChange={this.handleFile} />
-          <input type="submit" value="submit" />
-
-          <img id='image-preview' src={ this.state.imageUrl } />
+      <div className="upload">
+        <p className='upload-page-title'>Upload Your Image</p>
+        <form className="upload-form" onSubmit={this.handleSubmit}>
+          <div className="example-photo">
+            <img
+              id='image-preview'
+              src={ this.state.imageUrl }
+              />
+          </div>
+          <input
+            className="upload-file-selector"
+            type="file"
+            id="file-selector"
+            onChange={this.handleFile}
+            />
+          <label
+            className="upload-file-selector-label"
+            htmlFor="file-selector"
+            >Choose a file
+          </label>
+          <input
+            className="upload-submit"
+            type="submit"
+            value="Submit"
+            />
         </form>
       </div>
     )

@@ -1,7 +1,10 @@
+.nav-bar {
+  position: fixed;
+  width: 100vw;
+}
+
 .nav-bar-items {
   display: flex;
-  position: fixed;
-  width: 100%;
   background-color: white;
   border-bottom: 1px solid lightgray;
   padding: 14px 9px;

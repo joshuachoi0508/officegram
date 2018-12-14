@@ -7,7 +7,7 @@ class Profile extends React.Component {
     this.renderImages = this.renderImages.bind(this);
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
     this.props.fetchUserImages(this.props.user.id);
   }
 
@@ -24,6 +24,8 @@ class Profile extends React.Component {
   render(){
     return(
       <div className="profile">
+        <div className="user-profile">
+        </div>
         <p>THIS IS PROFILE</p>
           <a href="#/upload">upload</a>
         <ul>
