@@ -4,20 +4,20 @@ export const RECEIVE_ALL_IMAGES = 'RECEIVE_ALL_IMAGES';
 export const RECEIVE_ONE_IMAGE = 'RECEIVE_ONE_IMAGE';
 export const REMOVE_IMAGE = 'REMOVE_IMAGE'
 export const RECEIVE_USER_IMAGES = 'RECEIVE_USER_IMAGES';
-export const RECEIVE_IMAGE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_IMAGE_ERRORS = 'RECEIVE_IMAGE_ERRORS';
 
 const receiveAllImages = images => ({
-  action: RECEIVE_ALL_IMAGES,
+  type: RECEIVE_ALL_IMAGES,
   images: images
 });
 
 const receiveOneImage = image => ({
-  action: RECEIVE_ONE_IMAGE,
+  type: RECEIVE_ONE_IMAGE,
   image: image
 });
 
 const removeImage = imageId => ({
-  action: REMOVE_IMAGE,
+  type: REMOVE_IMAGE,
   imageId: imageId
 });
 
@@ -27,7 +27,7 @@ const receiveImageErrors = errors => ({
 });
 
 const receiveUserImages = images => ({
-  action: RECEIVE_USER_IMAGES,
+  type: RECEIVE_USER_IMAGES,
   images: images
 });
 

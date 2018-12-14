@@ -6,7 +6,7 @@ class Profile extends React.Component {
 
     this.state = {
       body: "",
-      photoFile: null,
+      imageFile: null,
       imageUrl: ""
     }
 
@@ -15,17 +15,15 @@ class Profile extends React.Component {
   }
 
   handleFile(e) {
-    e.preventDefault();
-
-    const reader = new FileReader();
     const file = e.currentTarget.files[0];
-    reader.onloadend = () =>
-      this.setState({ imageUrl: reader.result, imageFile: file});
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      this.setState({imageFile: file, imageUrl: reader.result });
+    };
 
     if (file) {
       reader.readAsDataURL(file);
-    } else {
-      this.setState({ imageUrl: "", imageFile: null });
     }
   }
 
@@ -34,11 +32,11 @@ class Profile extends React.Component {
 
     const formData = new FormData();
     formData.append('image[body]', this.state.body);
-    if (this.state.photoFile) {
-
-      formData.append('image[image_url]', this.state.photoFile);
+    if (this.state.imageFile) {
+      formData.append('image[image]', this.state.imageFile);
     }
 
+    debugger;
     this.props.createImage(formData)
   }
 
@@ -46,9 +44,10 @@ class Profile extends React.Component {
     return(
       <div className="profile">
         <p>HELLO THIS IS PROFILE</p>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input className="upload-file" type="file" onChange={e => this.handleFile(e)} />
+        <form onSubmit={this.handleSubmit}>
+          <input className="upload-file" type="file" onChange={this.handleFile} />
           <input type="submit" value="submit" />
+          <img id='image-preview' src={ this.state.imageUrl } />
         </form>
       </div>
     )

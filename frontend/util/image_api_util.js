@@ -14,7 +14,7 @@ export const fetchImage = imageId => (
 
 export const createImage = image => (
   $.ajax({
-    url: '/api/images',
+    url: 'api/images',
     method: 'POST',
     data: image,
     contentType: false,
