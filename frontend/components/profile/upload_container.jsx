@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import Profile from './profile';
+import Upload from './upload';
 import { createImage } from '../../actions/image_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,8 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    createImage: image => dispatch(createImage(image))
+
   })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Upload);
