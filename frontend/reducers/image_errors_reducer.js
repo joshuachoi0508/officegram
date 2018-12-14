@@ -1,4 +1,4 @@
-import { RECEIVE_IMAGE_ERRORS } from '../actions/session_actions';
+import { RECEIVE_IMAGE_ERRORS } from '../actions/image_actions';
 
 export const imageErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
@@ -11,4 +11,4 @@ export const imageErrorsReducer = (oldState = [], action) => {
   }
 };
 
-export default sessionErrorsReducer;
+export default imageErrorsReducer;
