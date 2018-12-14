@@ -6,7 +6,10 @@ class User < ApplicationRecord
   attr_reader :password
   before_validation :ensure_session_token
 
-  has_many :images
+  has_many :images,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Image'
 
   def password=(password)
     @password = password
