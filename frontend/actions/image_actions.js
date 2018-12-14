@@ -59,9 +59,10 @@ export const deleteImage = imageId => dispatch => (
     .then(imageId => dispatch(removeImage(imageId)))
 );
 
-export const fetchUserImages = userId => (
-  ImagesAPIUtil.fetchUserImages(userId)
-    .then(images => dispatch(receiveUserImages(images)))
+export const fetchUserImages = userId => dispatch => (
+  ImageAPIUtil.fetchUserImages(userId)
+    .then(images => dispatch(receiveUserImages(images)),
+           errors => dispatch(receiveImageErrors(errors.responseJSON)))
 );
 
 export const removeErrors = () => dispatch => (

@@ -3,15 +3,31 @@ import React from 'react';
 class Profile extends React.Component {
   constructor(props){
     super(props);
+
+    this.renderImages = this.renderImages.bind(this);
+  }
+
+  componentDidUpdate(){
+    this.props.fetchUserImages(this.props.user.id);
+  }
+
+  renderImages(){
+    return this.props.images.map(image => {
+      return(
+        <img
+          key={`image-${image.id}`}
+          src={image.image_url} />
+      )
+    })
   }
 
   render(){
     return(
       <div className="profile">
         <p>THIS IS PROFILE</p>
-        <a href="#/upload">upload</a>
+          <a href="#/upload">upload</a>
         <ul>
-          //images go here
+          {this.renderImages()}
         </ul>
       </div>
     )

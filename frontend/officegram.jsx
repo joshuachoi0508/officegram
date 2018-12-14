@@ -5,7 +5,7 @@ import Root from './components/root';
 
 //testing
 import { logout } from './util/session_api_util'
-import { fetchImages } from './util/image_api_util'
+import { fetchUserImages } from './util/image_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   //test
-  window.fetchImages = fetchImages;
+  window.fetchUserImages = fetchUserImages;
 
   if (window.currentUser) {
     const preloadedState = {

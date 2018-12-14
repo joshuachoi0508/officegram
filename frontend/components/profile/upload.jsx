@@ -36,7 +36,7 @@ class Upload extends React.Component {
       formData.append('image[image]', this.state.imageFile);
     }
 
-    this.props.createImage(formData)
+    this.props.createImage(formData).then(this.props.history.push("/profile"))
   }
 
   render(){
