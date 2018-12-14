@@ -19,7 +19,9 @@ class NavBar extends React.Component {
               >
           </li>
           <li className="right-nav-bar">
-            <img className="profile-logo" src={window.images.profile_logo} />
+            <Link to="/profile">
+              <img className="profile-logo" src={window.images.profile_logo} />
+            </Link>
           </li>
         </ul>
       </div>

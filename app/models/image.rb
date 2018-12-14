@@ -2,7 +2,7 @@ class Image < ApplicationRecord
   # validates :ensure_photo
 
   belongs_to :user
-  has_one_attached :image_url
+  has_one_attached :image
 
   # def ensure_photo
   #   unless self.image.attached?

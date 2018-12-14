@@ -5,11 +5,15 @@ import Root from './components/root';
 
 //testing
 import { logout } from './util/session_api_util'
+import { fetchImages } from './util/image_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
+
+  //test
+  window.fetchImages = fetchImages;
 
   if (window.currentUser) {
     const preloadedState = {

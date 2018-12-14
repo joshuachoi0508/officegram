@@ -1,6 +1,6 @@
 class Api::ImagesController < ApplicationController
   def index
-    @pimages = Image.all
+    @images = Image.all
   end
 
   def show
@@ -28,11 +28,11 @@ class Api::ImagesController < ApplicationController
     end
   end
 
-  def destry
+  def destroy
     @image = Image.find(params[:id])
 
     if @image.destroy
-      render :show
+      render json: @image.id
     else
       render json: @image.errors.full_messages, status: 422
     end

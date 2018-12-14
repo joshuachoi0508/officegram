@@ -1,17 +1,15 @@
+import React from 'react';
 
+class Profile extends React.Component {
 
-
-
-
-
-
-
-
-
-const mapStateToProps = (state, ownProps) => {
+  render(){
+    return(
+      <div className="profile">
+        <p>HELLO THIS IS PROFILE</p>
+      </div>
+    )
+  }
 
 }
 
-const mapDispatchToProps = dispatch => {
-  
-}
+export default Profile;
