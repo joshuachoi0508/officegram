@@ -1,6 +1,7 @@
 .nav-bar {
   position: fixed;
   width: 100vw;
+  z-index: 1;
 }
 
 .nav-bar-items {
@@ -18,7 +19,9 @@
 }
 
 .right-nav-bar {
+  display: flex;
   margin-left: 20%;
+  align-items: center;
 }
 
 .main-logo {
@@ -49,10 +52,25 @@
   width: 44px;
 }
 
+.upload-logo {
+  width: 33px;
+  padding-top: 2px;
+  padding-right: 4px;
+  opacity: 0.6;
+}
+
 .profile-logo:hover {
+  cursor: pointer;
+}
+
+.upload-logo:hover {
   cursor: pointer;
 }
 
 .profile-logo:active {
   opacity: 0.5;
+}
+
+.upload-logo:active {
+  opacity: 0.3;
 }

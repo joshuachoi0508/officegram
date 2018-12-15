@@ -17,19 +17,62 @@
 }
 
 .profile-images {
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: repeat(3, 300px [col-start]);
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, minmax(5px, 300px));
+  grid-gap: 28px; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .image-container {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  position: relative;
+  /* box-sizing: border-box; */
+  /* justify-content: center;
+  align-items: center; */
+  width: 33%;
+  padding-top: 33%;
 }
 
 .image {
-  max-width: 100%;
-  max-height: 300px;
+  /* width: 300px;
+  height: 300px; */
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  /* width: 100%;
+  padding-top: 100%; */
+  width: 90%;
+  height: 90%;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-stats {
+  display: flex;
+  position: absolute;
+  background-color: black;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  width: 90%;
+  height: 90%;
+}
+
+.image-stats:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.image-stats-info {
+  font-family: 'helvetica';
+  color: white;
 }

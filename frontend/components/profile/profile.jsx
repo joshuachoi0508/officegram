@@ -19,6 +19,10 @@ class Profile extends React.Component {
             className="image"
             key={`image-${image.id}`}
             src={image.image_url} />
+          <ul className="image-stats">
+            <li className="image-stats-info">LIKE</li>
+            <li className="image-stats-info">COMMENTS</li>
+          </ul>
         </li>
       )
     })
@@ -28,9 +32,15 @@ class Profile extends React.Component {
     return(
       <div className="profile">
         <div className="user-profile">
-          <p>THIS IS PROFILE INFO TAB</p>
+          <ul className="profile-info">
+            <li>
+              <p>profile-pic</p>
+            </li>
+            <li>
+              <p>info</p>
+            </li>
+          </ul>
         </div>
-          <a href="#/upload">upload</a>
         <ul className="profile-images">
           {this.renderImages()}
         </ul>

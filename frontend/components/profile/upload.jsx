@@ -27,6 +27,12 @@ class Upload extends React.Component {
     }
   }
 
+  update(){
+    return e => this.setState({
+      [body]: e.currentTarget.value
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -50,6 +56,10 @@ class Upload extends React.Component {
               src={ this.state.imageUrl }
               />
           </div>
+          <textarea
+            value={this.state.body}
+            onChange={this.update}
+            />
           <input
             className="upload-file-selector"
             type="file"

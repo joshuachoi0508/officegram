@@ -50,8 +50,8 @@
 .example-photo {
   display: flex;
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   border: 1px solid lightgray;
   border-radius: 8px;
 }
@@ -59,6 +59,6 @@
 #image-preview {
   margin: auto;
   height: auto;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 400px;
+  max-height: 400px;
 }

@@ -19,6 +19,9 @@ class NavBar extends React.Component {
               >
           </li>
           <li className="right-nav-bar">
+            <a href="#/upload">
+              <img className="upload-logo" src={window.images.upload_logo} />
+            </a>
             <Link to="/profile">
               <img className="profile-logo" src={window.images.profile_logo} />
             </Link>
