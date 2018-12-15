@@ -17,9 +17,6 @@
 }
 
 .profile-images {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, minmax(5px, 300px));
-  grid-gap: 28px; */
   display: flex;
   flex-wrap: wrap;
   width: 70%;
@@ -27,23 +24,15 @@
 }
 
 .image-container {
-  /* display: flex; */
   position: relative;
-  /* box-sizing: border-box; */
-  /* justify-content: center;
-  align-items: center; */
   width: 33%;
   padding-top: 33%;
 }
 
 .image {
-  /* width: 300px;
-  height: 300px; */
   position: absolute;
   object-fit: cover;
   top: 0;
-  /* width: 100%;
-  padding-top: 100%; */
   width: 90%;
   height: 90%;
 }

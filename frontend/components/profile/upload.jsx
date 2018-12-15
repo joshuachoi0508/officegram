@@ -57,8 +57,10 @@ class Upload extends React.Component {
               />
           </div>
           <textarea
-            value={this.state.body}
+            className="body-input"
             onChange={this.update}
+            maxLength="300"
+            placeholder="Caption"
             />
           <input
             className="upload-file-selector"

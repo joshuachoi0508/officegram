@@ -12,7 +12,7 @@ class Profile extends React.Component {
   }
 
   renderImages(){
-    return this.props.images.map(image => {
+    let posts = this.props.images.map(image => {
       return(
         <li key={`image-${image.id}`} className="image-container">
           <img
@@ -26,6 +26,8 @@ class Profile extends React.Component {
         </li>
       )
     })
+
+    return posts.reverse();
   }
 
   render(){

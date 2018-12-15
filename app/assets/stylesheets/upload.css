@@ -62,3 +62,14 @@
   max-width: 400px;
   max-height: 400px;
 }
+
+.body-input {
+  width: 250px;
+  height: 50px;
+  padding: 6px;
+  background-color: #fafafa;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  resize: none;
+}
