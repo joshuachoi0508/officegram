@@ -6,7 +6,8 @@ import { createImage } from '../../actions/image_actions';
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[state.session.id];
   return ({
-    user: user
+    user: user,
+    errors: state.errors.image
   })
 }
 

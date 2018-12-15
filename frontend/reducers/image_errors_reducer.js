@@ -7,7 +7,7 @@ export const imageErrorsReducer = (oldState = [], action) => {
     case RECEIVE_IMAGE_ERRORS:
       return action.errors;
     default:
-      return oldState
+      return oldState;
   }
 };
 

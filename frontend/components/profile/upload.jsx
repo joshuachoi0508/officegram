@@ -12,6 +12,7 @@ class Upload extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.update = this.update.bind(this);
   }
 
   handleFile(e) {
@@ -28,9 +29,9 @@ class Upload extends React.Component {
   }
 
   update(){
-    return e => this.setState({
-      [body]: e.currentTarget.value
-    });
+    return (e) => {
+      this.setState({ body: e.target.value })
+    }
   }
 
   handleSubmit(e) {
@@ -45,6 +46,18 @@ class Upload extends React.Component {
     this.props.createImage(formData).then(() => this.props.history.push("/profile"))
   }
 
+  // renderErrors(){
+  //   return(
+  //     <ul className="error-list">
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`} className="submit-errors">
+  //           { error }
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
   render(){
     return(
       <div className="upload">
@@ -53,15 +66,17 @@ class Upload extends React.Component {
           <div className="example-photo">
             <img
               id='image-preview'
-              src={ this.state.imageUrl }
+              src={this.state.imageUrl}
               />
           </div>
           <textarea
             className="body-input"
-            onChange={this.update}
+            value={this.state.value}
+            onChange={this.update()}
             maxLength="300"
             placeholder="Caption"
             />
+
           <input
             className="upload-file-selector"
             type="file"
