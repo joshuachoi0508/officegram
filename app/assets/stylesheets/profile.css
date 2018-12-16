@@ -77,7 +77,8 @@
 }
 
 .profile-pic-container {
-  width: 33%;
+  max-width: 33%;
+  margin-left: 5%;
 }
 
 .profile-pic {
@@ -92,14 +93,47 @@
   margin-right: 3%;
 }
 
-.profile-info-contaienr {
+.profile-info-container {
   display: flex;
   width: 72%;
   padding: 14px;
-  margin-left: 50px;
+  margin-left: 6%;
 }
 
 .username {
   font-family: 'helvetica';
-  font-size: 115%;
+  font-size: 130%;
+  margin-right: 15px;
+}
+
+.name-and-edit-container {
+  display: flex;
+  align-items: center;
+  height: 27%;
+}
+
+.edit-profile-button {
+  font-family: 'helvetica';
+  width: 90px;
+  border-radius: 10%;
+  background-color: #fafafa;
+  font-size: 90%;
+  padding: 7px;
+  margin-right: 5px;
+}
+
+.edit-profile-button:active {
+  opacity: .5;
+  border-style: outset;
+}
+
+.logout-button {
+  color: #fafafa;
+  width: 26px;
+  opacity: .6;
+  margin-left: 6px;
+}
+
+.logout-button:hover {
+  cursor: pointer;
 }

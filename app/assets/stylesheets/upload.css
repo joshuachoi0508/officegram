@@ -73,9 +73,3 @@
   border-radius: 8px;
   resize: none;
 }
-
-.profile-info-container {
-  display: flex;
-  width: 72%;
-  padding: 3%;
-}
