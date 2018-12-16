@@ -10,7 +10,6 @@ class Profile extends React.Component {
   componentDidMount(){
     if (this.props.fetchUser) {
       this.props.fetchUser(this.props.userId)
-      debugger;
     }
   }
 

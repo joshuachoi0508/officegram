@@ -8,8 +8,13 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    debugger;
     this.props.fetchUser(this.props.userId)
+
+    //this is completely ignored
+    debugger
+    if (this.props.userId === this.props.session.id) {
+      this.props.history.push("/profile")
+    }
   }
 
   renderImages(){
@@ -32,6 +37,12 @@ class Profile extends React.Component {
   }
 
   render(){
+    if (!this.props.user){
+      return(
+        <p>loading...</p>
+      )
+    }
+
     return(
       <div className="profile">
         <div className="user-profile">
@@ -42,7 +53,7 @@ class Profile extends React.Component {
             <li className="profile-info-container">
               <div className="name-and-edit-container">
                 <p className="username">{this.props.user.username}</p>
-                <button className="edit-profile-button">Edit Profile</button>
+                <button className="edit-profile-button">Follow</button>
                 <img
                   className="logout-button"
                   src={window.images.logout_logo}

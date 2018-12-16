@@ -5,10 +5,17 @@ import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[ownProps.match.params.id];
+  let images = [];
+
+  if (user) {
+    images = Object.values(user.images);
+  }
 
   return ({
     userId: ownProps.match.params.id,
-    user: user
+    session: state.session,
+    user: user,
+    images: images
   })
 }
 

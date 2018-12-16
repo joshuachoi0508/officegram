@@ -8,13 +8,6 @@
   font-family: 'helvetica';
 }
 
-.user-profile {
-  display: flex;
-  height: 190px;
-  justify-content: center;
-  align-items: center;
-}
-
 .profile-images {
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +60,11 @@
 }
 
 .user-profile {
-  width: 90%;
+  display: flex;
+  height: 190px;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
   padding-bottom: .5%;
 }
 
@@ -113,12 +110,13 @@
 
 .edit-profile-button {
   font-family: 'helvetica';
-  width: 90px;
+  width: 92px;
   border-radius: 10%;
   background-color: #fafafa;
   font-size: 90%;
   padding: 7px;
   margin-right: 5px;
+  font-weight: bold;
 }
 
 .edit-profile-button:active {
