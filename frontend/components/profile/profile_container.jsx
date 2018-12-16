@@ -5,7 +5,10 @@ import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[state.session.id];
-  const images = Object.values(user.images);
+  let images = [];
+  if (user.images) {
+    images = Object.values(user.images);
+  }
 
   return ({
     user: user,
