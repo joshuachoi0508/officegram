@@ -27,7 +27,6 @@ const App = (props) => {
         <ProtectedRoute path='/users/:id' component={UserPageContainer} />
         <ProtectedRoute path='/' component={IndexComponent} />
       </Switch>
-      <button onClick={() => props.dispatch(logout())}>log out</button>
     </div>
   )
 }
