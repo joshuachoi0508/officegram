@@ -10,6 +10,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import ProfileContainer from './profile/profile_container';
 import UploadContainer from './profile/upload_container';
 import UserPageContainer from './profile/user_page_container';
+import EditProfileContainer from './profile/edit_profile_container'
 
 //before having container
 import IndexComponent from './index/index_component'
@@ -22,6 +23,7 @@ const App = (props) => {
       <Switch>
         <AuthRoute path='/login' component={LoginFormContainer} />
         <AuthRoute path='/signup' component={SignupFormContainer} />
+        <ProtectedRoute path='/profile/edit' component={EditProfileContainer} />
         <ProtectedRoute path='/profile' component={ProfileContainer} />
         <ProtectedRoute path='/upload' component={UploadContainer} />
         <ProtectedRoute path='/users/:id' component={UserPageContainer} />
