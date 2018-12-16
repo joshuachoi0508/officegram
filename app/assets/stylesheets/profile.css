@@ -10,7 +10,6 @@
 
 .user-profile {
   display: flex;
-  width: 950px;
   height: 190px;
   justify-content: center;
   align-items: center;
@@ -19,7 +18,7 @@
 .profile-images {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 2.5%;
 }
@@ -68,7 +67,7 @@
 }
 
 .user-profile {
-  width: 65%;
+  width: 90%;
   padding-bottom: .5%;
 }
 
@@ -87,7 +86,7 @@
 }
 
 .divider {
-  width: 64%;
+  width: 80%;
   height: 1px;
   background: lightgray;
   margin-right: 3%;
