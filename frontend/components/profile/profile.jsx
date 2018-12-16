@@ -4,15 +4,36 @@ class Profile extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      images: this.props.images
+    }
     this.renderImages = this.renderImages.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchUserImages(this.props.user.id);
+    this.props.fetchImages()
+
+    if (this.props.fetchUser) {
+      this.props.fetchUser(this.props.userId);
+    }
+
+    // problematic
+    let userImages = [];
+    const images = this.state.images
+
+    for(let i = 0; i < images.length; i++) {
+      let image = images[i];
+
+      if (image.user_id === this.props.user.id) {
+        userImages.push(image);
+      }
+    }
+
+    this.setState({ images: userImages })
   }
 
   renderImages(){
-    let posts = this.props.images.map(image => {
+    let posts = this.state.images.map(image => {
       return(
         <li key={`image-${image.id}`} className="image-container">
           <img
@@ -35,14 +56,15 @@ class Profile extends React.Component {
       <div className="profile">
         <div className="user-profile">
           <ul className="profile-info">
-            <li>
-              <p>profile-pic</p>
+            <li className="profile-pic-container">
+              <img className="profile-pic" src={window.images.profile_pic} />
             </li>
-            <li>
-              <p>info</p>
+            <li className="profile-info-container">
+              <p className="username">{this.props.user.username}</p>
             </li>
           </ul>
         </div>
+        <div className="divider"></div>
         <ul className="profile-images">
           {this.renderImages()}
         </ul>

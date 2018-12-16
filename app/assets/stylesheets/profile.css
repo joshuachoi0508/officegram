@@ -21,6 +21,7 @@
   flex-wrap: wrap;
   width: 70%;
   margin: 0 auto;
+  padding-top: 2.5%;
 }
 
 .image-container {
@@ -64,4 +65,41 @@
 .image-stats-info {
   font-family: 'helvetica';
   color: white;
+}
+
+.user-profile {
+  width: 65%;
+  padding-bottom: .5%;
+}
+
+.profile-info {
+  width: 100%;
+}
+
+.profile-pic-container {
+  width: 33%;
+}
+
+.profile-pic {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.divider {
+  width: 64%;
+  height: 1px;
+  background: lightgray;
+  margin-right: 3%;
+}
+
+.profile-info-contaienr {
+  display: flex;
+  width: 72%;
+  padding: 14px;
+  margin-left: 50px;
+}
+
+.username {
+  font-family: 'helvetica';
+  font-size: 115%;
 }
