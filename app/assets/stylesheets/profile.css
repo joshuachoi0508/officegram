@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
-  padding-top: 2.5%;
+  padding-top: 4.5%;
 }
 
 .image-container {
@@ -31,6 +31,7 @@
 }
 
 .profile-info {
+  width: 85%;
   display: flex;
   flex-direction: row;
 }
@@ -61,39 +62,45 @@
 
 .user-profile {
   display: flex;
-  height: 190px;
   width: 85%;
   justify-content: center;
   align-items: center;
-  padding-bottom: .5%;
+  padding-bottom: 2.5%;
 }
 
 .profile-info {
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .profile-pic-container {
-  max-width: 33%;
+  width: 160px;
+  height: 127px;
   margin-left: 5%;
+  padding: 12px;
+  margin-bottom: 6px;
 }
 
 .profile-pic {
-  max-width: 100%;
+  width: 87%;
+  height: 107%;
   border-radius: 50%;
 }
 
 .divider {
   width: 80%;
   height: 1px;
-  background: lightgray;
+  background: #efefef;
   margin-right: 3%;
 }
 
 .profile-info-container {
   display: flex;
-  width: 72%;
-  padding: 14px;
-  margin-left: 6%;
+  width: 70%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-left: 13px;
 }
 
 .username {
@@ -117,6 +124,7 @@
   padding: 7px;
   margin-right: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .edit-profile-button:active {

@@ -7,7 +7,7 @@
 .nav-bar-items {
   display: flex;
   background-color: white;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #efefef;
   padding: 14px 9px;
   padding-top: 14px;
   justify-content: center;
@@ -26,6 +26,7 @@
 
 .main-logo {
   width: 82px;
+  opacity: .8;
 }
 
 .main-logo:hover {
@@ -42,7 +43,7 @@
   padding: 6px;
   width: 199px;
   height: 14px;
-  border: 1px solid lightgray;
+  border: 1px solid #efefef;
   border-radius: 3px;
   font-size: 15px;
   font-weight: lighter;
