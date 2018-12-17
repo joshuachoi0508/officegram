@@ -22,10 +22,11 @@
 }
 
 .profile-pic-edit {
-  width: 30%;
-  height: 41%;
+  width: 29%;
+  height: 40%;
   border-radius: 50%;
   margin-bottom: 35px;
+  object-fit: cover;
 }
 
 .edit-input-boxes {
@@ -45,7 +46,6 @@
 }
 
 .edit-username-input {
-  background: #fafafa;
   border: 1px solid #efefef;
   width: 124px;
   padding: 3px;
@@ -67,7 +67,6 @@
   width: 124px;
   padding: 2px;
   border: 1px solid #efefef;
-  background: #fafafa;
 }
 
 .bio-label {
@@ -85,7 +84,6 @@
   width: 250px;
   height: 50px;
   padding: 6px;
-  background-color: #fafafa;
   margin-top: 2px;
   border: 1px solid #efefef;
   resize: none;
@@ -93,7 +91,7 @@
 
 .edit-button {
   font-family: 'helvetica';
-  font-size: 12px;
+  font-size: 13px;
   width: 200px;
   margin-top: 15px;
   background-color: #3897f0;
@@ -101,4 +99,36 @@
   border-radius: 5px;
   color: white;
   margin-left: 86px;
+}
+
+.name-and-edit-container {
+  display: flex;
+  align-items: center;
+  height: 27%;
+}
+
+.edit-profile-button {
+  font-family: 'helvetica';
+  width: 92px;
+  border-radius: 10%;
+  background-color: #fafafa;
+  font-size: 90%;
+  padding: 7px;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-profile-button:active {
+  opacity: .5;
+  border-style: outset;
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+.edit-button:active {
+  opacity: 0.5;
+  border-style: outset;
 }

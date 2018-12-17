@@ -18,7 +18,7 @@ import NavBar from './nav_bar/nav_bar'
 
 const App = (props) => {
   return (
-    <div>
+    <div className="boss-div">
       <ProtectedRoute component={NavBar} />
       <Switch>
         <AuthRoute path='/login' component={LoginFormContainer} />

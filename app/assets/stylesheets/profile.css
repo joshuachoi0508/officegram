@@ -1,3 +1,7 @@
+.boss-div {
+  background: #fafafa;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -12,6 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
   padding-top: 4.5%;
 }
@@ -63,9 +68,9 @@
 .user-profile {
   display: flex;
   width: 85%;
+  max-width: 1000px;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2.5%;
 }
 
 .profile-info {
@@ -75,17 +80,17 @@
 }
 
 .profile-pic-container {
-  width: 160px;
-  height: 127px;
-  margin-left: 5%;
+  width: 198px;
+  height: 183px;
+  margin-left: 9%;
   padding: 12px;
-  margin-bottom: 6px;
 }
 
 .profile-pic {
-  width: 87%;
-  height: 107%;
-  border-radius: 50%;
+  width: 85%;
+  height: 85%;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
 .divider {
@@ -93,6 +98,7 @@
   height: 1px;
   background: #efefef;
   margin-right: 3%;
+  max-width: 900px;
 }
 
 .profile-info-container {
@@ -101,6 +107,7 @@
   padding-top: 14px;
   padding-bottom: 14px;
   margin-left: 13px;
+  margin-left: 50px;
 }
 
 .username {
@@ -109,27 +116,16 @@
   margin-right: 15px;
 }
 
-.name-and-edit-container {
-  display: flex;
-  align-items: center;
-  height: 27%;
-}
-
-.edit-profile-button {
+.follow-button {
   font-family: 'helvetica';
-  width: 92px;
+  width: 78px;
   border-radius: 10%;
   background-color: #fafafa;
   font-size: 90%;
-  padding: 7px;
+  padding: 4px;
   margin-right: 5px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.edit-profile-button:active {
-  opacity: .5;
-  border-style: outset;
 }
 
 .logout-button {

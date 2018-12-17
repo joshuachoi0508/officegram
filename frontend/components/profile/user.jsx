@@ -53,7 +53,7 @@ class Profile extends React.Component {
             <li className="profile-info-container">
               <div className="name-and-edit-container">
                 <p className="username">{this.props.user.username}</p>
-                <button className="edit-profile-button">Follow</button>
+                <button className="follow-button">Follow</button>
                 <img
                   className="logout-button"
                   src={window.images.logout_logo}
