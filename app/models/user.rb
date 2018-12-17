@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  bio             :text             default("")
+#
+
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
@@ -9,7 +22,42 @@ class User < ApplicationRecord
   has_many :images,
     primary_key: :id,
     foreign_key: :user_id,
-    class_name: 'Image'
+    class_name: 'Image',
+    dependent: :destroy
+
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Like',
+    dependent: :destroy
+
+  has_many :followships,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Follow',
+    dependent: :destroy
+
+  has_many :followships,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: 'Follow',
+    dependent: :destroy
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Comment',
+    dependent: :destroy
+
+
+  has_many :followers,
+    through: :followerships,
+    source: :follower
+
+  has_many :followings,
+    through: :followeeships,
+    source: :following
+
 
   has_one_attached :photo
 

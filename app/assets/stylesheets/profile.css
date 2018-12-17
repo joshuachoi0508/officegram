@@ -16,9 +16,9 @@
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding-top: 4.5%;
+  padding-top: 3%;
 }
 
 .image-container {
@@ -68,7 +68,7 @@
 .user-profile {
   display: flex;
   width: 85%;
-  max-width: 1000px;
+  max-width: 900px;
   justify-content: center;
   align-items: center;
 }
@@ -80,9 +80,13 @@
 }
 
 .profile-pic-container {
-  width: 198px;
-  height: 183px;
-  margin-left: 9%;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  align-items: center;
+  width: 185px;
+  height: 185px;
+  margin-left: 5%;
   padding: 12px;
 }
 
@@ -104,9 +108,8 @@
 .profile-info-container {
   display: flex;
   width: 70%;
-  padding-top: 14px;
+  padding-top: 25px;
   padding-bottom: 14px;
-  margin-left: 13px;
   margin-left: 50px;
 }
 
@@ -124,7 +127,6 @@
   font-size: 90%;
   padding: 4px;
   margin-right: 5px;
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -133,6 +135,7 @@
   width: 26px;
   opacity: .6;
   margin-left: 6px;
+  margin-bottom: 1px;
 }
 
 .logout-button:hover {

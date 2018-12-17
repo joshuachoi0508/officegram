@@ -8,6 +8,7 @@
 
 .edit-container {
   display: flex;
+  flex-shrink: 0;
   background: white;
   font-family: 'helvetica';
   flex-direction: column;
@@ -115,7 +116,6 @@
   font-size: 90%;
   padding: 7px;
   margin-right: 5px;
-  font-weight: bold;
   cursor: pointer;
 }
 

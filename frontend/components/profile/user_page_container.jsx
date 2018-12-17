@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[ownProps.match.params.id];
   let images = [];
 
-  if (user) {
+  if (user && user.images) {
     images = Object.values(user.images);
   }
 
