@@ -33,7 +33,7 @@ class Profile extends React.Component {
         <div className="user-profile">
           <ul className="profile-info">
             <li className="profile-pic-container">
-              <img className="profile-pic" src={window.images.profile_pic} />
+              <img className="profile-pic" src={this.props.user.photoUrl} />
             </li>
             <li className="profile-info-container">
               <div className="name-and-edit-container">

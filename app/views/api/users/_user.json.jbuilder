@@ -8,3 +8,5 @@ json.images do
     end
   end
 end
+
+json.photo_url url_for(user.photo)

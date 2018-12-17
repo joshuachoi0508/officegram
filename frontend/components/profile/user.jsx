@@ -14,12 +14,11 @@ class User extends React.Component {
     if (parseInt(this.props.userId) === this.props.session.id) {
       this.props.history.push("/profile")
     }
-
   }
 
   componentDidUpdate(prevProps){
     if (prevProps.userId !== this.props.userId) {
-      this.props.fetchUser(this.props.userId)
+      setTimeout(() => this.props.fetchUser(this.props.userId), 500)
 
       if (parseInt(this.props.userId) === this.props.session.id) {
         this.props.history.push("/profile")
@@ -60,7 +59,7 @@ class User extends React.Component {
         <div className="user-profile">
           <ul className="profile-info">
             <li className="profile-pic-container">
-              <img className="profile-pic" src={window.images.profile_pic} />
+              <img className="profile-pic" src={this.props.user.photoUrl} />
             </li>
             <li className="profile-info-container">
               <div className="name-and-edit-container">

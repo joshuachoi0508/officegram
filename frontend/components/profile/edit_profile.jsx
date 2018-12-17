@@ -7,13 +7,13 @@ class EditProfile extends React.Component {
     this.state = {
       id: this.props.user.id,
       username: this.props.user.username,
-      password: "",
       bio: this.props.user.bio,
       photoFile: null,
-      photoUrl: ""
+      photoUrl: this.props.user.photoUrl
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -41,9 +41,8 @@ class EditProfile extends React.Component {
     const formData = new FormData();
     formData.append('user[bio]', this.state.bio);
     formData.append('user[username]', this.state.username);
-    formData.append('user[password]', this.state.password);
-    if (this.state.imageFile) {
-      formData.append('user[photo]', this.state.imageFile);
+    if (this.state.photoFile) {
+      formData.append('user[photo]', this.state.photoFile);
     }
 
     this.props.updateUser(formData).then(() => this.props.history.push("/profile"))
@@ -77,9 +76,10 @@ class EditProfile extends React.Component {
                 className="new-profile-selector-label"
                 >
                 <img
-                  className="profile-pic-edit"
-                  src={window.images.profile_pic}
+                  id='edit-image-preview'
+                  src={this.state.photoUrl}
                   />
+                {this.renderExamplePhoto}
               </label>
               <div className="edit-input-boxes">
                 <label className="username-label">
@@ -89,14 +89,6 @@ class EditProfile extends React.Component {
                     className="edit-username-input"
                     value={this.state.username}
                     onChange={this.update("username")}
-                    />
-                </label>
-                <label className="password-label">
-                  <p className="edit-password">Password</p>
-                  <input
-                    type="Password"
-                    className="edit-password-input"
-                    onChange={this.update("password")}
                     />
                 </label>
                 <label className="bio-label">
