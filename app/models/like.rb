@@ -10,7 +10,7 @@
 #
 
 class Like < ApplicationRecord
-  belogs_to :image,
+  belongs_to :image,
     primary_key: :id,
     foreign_key: :image_id,
     class_name: 'Image'
