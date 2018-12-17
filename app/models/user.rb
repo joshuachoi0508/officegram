@@ -31,13 +31,13 @@ class User < ApplicationRecord
     class_name: 'Like',
     dependent: :destroy
 
-  has_many :followships,
+  has_many :followeeships,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'Follow',
     dependent: :destroy
 
-  has_many :followships,
+  has_many :followerships,
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: 'Follow',
@@ -58,7 +58,7 @@ class User < ApplicationRecord
     through: :followeeships,
     source: :following
 
-  has_many :following_photo,
+  has_many :following_photos,
     through: :followings,
     source: :images
 

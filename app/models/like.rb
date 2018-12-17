@@ -16,7 +16,7 @@ class Like < ApplicationRecord
     class_name: 'Image'
 
   belongs_to :user,
-    primary: :id,
+    primary_key: :id,
     foreign_key: :user_id,
     class_name: 'User'
 end
