@@ -9,5 +9,4 @@ json.images do
   end
 end
 
-# why doesn't this work
 json.photo_url url_for(@user.photo)

@@ -3,16 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-//testing
-import { fetchUserImages } from './util/image_api_util'
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
-
-  //test
-  window.fetchUserImages = fetchUserImages;
 
   if (window.currentUser) {
     const preloadedState = {
