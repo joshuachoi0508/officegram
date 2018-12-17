@@ -22,7 +22,7 @@ class Upload extends React.Component {
 
     reader.onloadend = () => {
       const fileExtension = file.name.split('.').pop();
-      const extensions = ['jpg', 'png'];
+      const extensions = ['jpg', 'png', 'JPG', 'PNG'];
 
       if (extensions.includes(fileExtension)) {
         this.setState({imageFile: file, imageUrl: reader.result, uploadErrors: [] });

@@ -193,3 +193,9 @@
   justify-content: center;
   padding: 10px;
 }
+
+.circle-loader-container {
+  display: flex;
+  padding-top: 200px;
+  justify-content: center;
+}

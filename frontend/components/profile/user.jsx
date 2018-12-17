@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircleLoader } from 'react-spinners';
 
 class User extends React.Component {
   constructor(props){
@@ -10,7 +11,6 @@ class User extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.userId)
 
-    debugger
     if (parseInt(this.props.userId) === this.props.session.id) {
       this.props.history.push("/profile")
     }
@@ -21,7 +21,6 @@ class User extends React.Component {
     if (prevProps.userId !== this.props.userId) {
       this.props.fetchUser(this.props.userId)
 
-      debugger
       if (parseInt(this.props.userId) === this.props.session.id) {
         this.props.history.push("/profile")
       }
@@ -50,7 +49,9 @@ class User extends React.Component {
   render(){
     if (!this.props.user){
       return(
-        <p>loading...</p>
+        <div className='circle-loader-container'>
+          <CircleLoader />
+        </div>
       )
     }
 
@@ -65,11 +66,6 @@ class User extends React.Component {
               <div className="name-and-edit-container">
                 <p className="username">{this.props.user.username}</p>
                 <button className="follow-button">Follow</button>
-                <img
-                  className="logout-button"
-                  src={window.images.logout_logo}
-                  onClick={() => this.props.logout()}
-                  />
               </div>
               <div className="post-follow-follower">
                 <p className="count">{this.props.images.length}</p>

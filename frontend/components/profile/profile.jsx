@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircleLoader } from 'react-spinners';
 
 class Profile extends React.Component {
   constructor(props){
@@ -7,10 +8,6 @@ class Profile extends React.Component {
     this.renderImages = this.renderImages.bind(this);
   }
 
-  // componentDidMount(){
-  //   this.props.fetchUser(this.props.user.id);
-  // }
-
   renderImages(){
     let posts = this.props.images.map(image => {
       return(
@@ -18,7 +15,7 @@ class Profile extends React.Component {
           <img
             className="image"
             key={`image-${image.id}`}
-            src={image.image_url} />
+            src={image.imageUrl} />
           <ul className="image-stats">
             <li className="image-stats-info">LIKE</li>
             <li className="image-stats-info">COMMENTS</li>
