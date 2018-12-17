@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @user.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_user.png"), filename: 'default_user.png')
+      @user.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_user_hold.png"), filename: 'default_user.png')
       login(@user)
       render :show
     else

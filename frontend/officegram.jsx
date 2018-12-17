@@ -4,7 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //testing
-import { logout } from './util/session_api_util'
 import { fetchUserImages } from './util/image_api_util'
 
 

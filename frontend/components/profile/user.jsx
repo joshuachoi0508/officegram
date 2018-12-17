@@ -1,19 +1,30 @@
 import React from 'react';
 
-class Profile extends React.Component {
+class User extends React.Component {
   constructor(props){
     super(props);
 
     this.renderImages = this.renderImages.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchUser(this.props.userId)
 
-    //this is completely ignored
     debugger
-    if (this.props.userId === this.props.session.id) {
+    if (parseInt(this.props.userId) === this.props.session.id) {
       this.props.history.push("/profile")
+    }
+
+  }
+
+  componentDidUpdate(prevProps){
+    if (prevProps.userId !== this.props.userId) {
+      this.props.fetchUser(this.props.userId)
+
+      debugger
+      if (parseInt(this.props.userId) === this.props.session.id) {
+        this.props.history.push("/profile")
+      }
     }
   }
 
@@ -60,6 +71,18 @@ class Profile extends React.Component {
                   onClick={() => this.props.logout()}
                   />
               </div>
+              <div className="post-follow-follower">
+                <p className="count">{this.props.images.length}</p>
+                <p className="category">posts</p>
+                <p className="count">0</p>
+                <p className="category">followers</p>
+                <p className="count">0</p>
+                <p className="category">following</p>
+              </div>
+              <div className="bio-container">
+                <p className="bio">{this.props.user.username}&#39;s Bio</p>
+                <p className="bio-element">{this.props.user.bio}</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -73,4 +96,4 @@ class Profile extends React.Component {
 
 }
 
-export default Profile;
+export default User;

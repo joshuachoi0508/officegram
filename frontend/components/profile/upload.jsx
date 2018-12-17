@@ -7,7 +7,8 @@ class Upload extends React.Component {
     this.state = {
       body: "",
       imageFile: null,
-      imageUrl: ""
+      imageUrl: "",
+      uploadErrors: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +21,14 @@ class Upload extends React.Component {
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      this.setState({imageFile: file, imageUrl: reader.result });
+      const fileExtension = file.name.split('.').pop();
+      const extensions = ['jpg', 'png'];
+
+      if (extensions.includes(fileExtension)) {
+        this.setState({imageFile: file, imageUrl: reader.result, uploadErrors: [] });
+      } else {
+        this.setState({uploadErrors: ['Please select a jpg or png file']})
+      }
     };
 
     if (file) {
@@ -43,20 +51,20 @@ class Upload extends React.Component {
       formData.append('image[image]', this.state.imageFile);
     }
 
-    this.props.createImage(formData).then(() => this.props.history.push("/profile"))
+    this.props.createImage(formData)
+      .then(() => this.props.fetchUser(this.props.user.id))
+      .then(() => this.props.history.push("/profile"))
   }
 
-  // renderErrors(){
-  //   return(
-  //     <ul className="error-list">
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`} className="submit-errors">
-  //           { error }
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors(){
+    return(
+      <ul className="error-list">
+        <li className="submit-errors">
+          {this.state.uploadErrors}
+        </li>
+      </ul>
+    );
+  }
 
   render(){
     return(
@@ -82,6 +90,7 @@ class Upload extends React.Component {
             type="file"
             id="file-selector"
             onChange={this.handleFile}
+            required
             />
           <label
             className="upload-file-selector-label"
@@ -93,6 +102,7 @@ class Upload extends React.Component {
             type="submit"
             value="Submit"
             />
+          {this.renderErrors()}
         </form>
       </div>
     )

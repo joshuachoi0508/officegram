@@ -26,6 +26,7 @@
   border-radius: 50%;
   margin-bottom: 35px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .edit-input-boxes {

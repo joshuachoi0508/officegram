@@ -10,7 +10,4 @@ json.images do
 end
 
 # why doesn't this work
-
-# json.photo do
-#   json.photo_url url_for(@user.photo)
-# end
+json.photo_url url_for(@user.photo)

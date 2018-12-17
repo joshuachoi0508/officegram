@@ -7,6 +7,10 @@ class Profile extends React.Component {
     this.renderImages = this.renderImages.bind(this);
   }
 
+  // componentDidMount(){
+  //   this.props.fetchUser(this.props.user.id);
+  // }
+
   renderImages(){
     let posts = this.props.images.map(image => {
       return(

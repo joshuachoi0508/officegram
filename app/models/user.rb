@@ -58,6 +58,9 @@ class User < ApplicationRecord
     through: :followeeships,
     source: :following
 
+  has_many :following_photo,
+    through: :followings,
+    source: :images
 
   has_one_attached :photo
 

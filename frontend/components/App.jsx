@@ -27,7 +27,8 @@ const App = (props) => {
         <ProtectedRoute path='/profile' component={ProfileContainer} />
         <ProtectedRoute path='/upload' component={UploadContainer} />
         <ProtectedRoute path='/users/:id' component={UserPageContainer} />
-        <ProtectedRoute path='/' component={IndexComponent} />
+        <ProtectedRoute exact path='/' component={IndexComponent} />
+        <Redirect to='/' />
       </Switch>
     </div>
   )

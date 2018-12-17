@@ -131,6 +131,11 @@
   cursor: pointer;
 }
 
+.follow-button:active {
+  opacity: 0.5;
+  border-style: outset;
+}
+
 .logout-button {
   color: #fafafa;
   width: 26px;
