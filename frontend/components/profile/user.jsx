@@ -33,7 +33,7 @@ class User extends React.Component {
           <img
             className="image"
             key={`image-${image.id}`}
-            src={image.image_url} />
+            src={image.imageUrl} />
           <ul className="image-stats">
             <li className="image-stats-info">LIKE</li>
             <li className="image-stats-info">COMMENTS</li>
