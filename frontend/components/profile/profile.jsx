@@ -46,6 +46,18 @@ class Profile extends React.Component {
                   onClick={() => this.props.logout()}
                   />
               </div>
+              <div className="post-follow-follower">
+                <p className="count">{this.props.images.length}</p>
+                <p className="category">posts</p>
+                <p className="count">0</p>
+                <p className="category">followers</p>
+                <p className="count">0</p>
+                <p className="category">following</p>
+              </div>
+              <div className="bio-container">
+                <p className="bio">{this.props.user.username}&#39;s Bio</p>
+                <p className="bio-element">{this.props.user.bio}</p>
+              </div>
             </li>
           </ul>
         </div>

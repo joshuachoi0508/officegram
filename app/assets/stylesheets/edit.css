@@ -11,8 +11,6 @@
   flex-shrink: 0;
   background: white;
   font-family: 'helvetica';
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 500px;
   height: 360px;
@@ -33,6 +31,7 @@
 .edit-input-boxes {
   display: flex;
   flex-direction: column;
+  margin-left: 60px;
 }
 
 .username-label {
@@ -131,4 +130,21 @@
 .edit-button:active {
   opacity: 0.5;
   border-style: outset;
+}
+
+.edit-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-profile-selector-label {
+  display: flex;
+  justify-content: center;
+}
+
+#new-profile-selector {
+  width: 0;
+  height: 0;
 }

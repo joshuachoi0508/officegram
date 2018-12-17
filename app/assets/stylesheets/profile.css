@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 80px;
   background-color: #fafafa;
   align-items: center;
   font-family: 'helvetica';
@@ -18,7 +18,7 @@
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 3%;
+  padding-top: 24px;
 }
 
 .image-container {
@@ -102,11 +102,12 @@
   height: 1px;
   background: #efefef;
   margin-right: 3%;
-  max-width: 900px;
+  max-width: 850px;
 }
 
 .profile-info-container {
   display: flex;
+  flex-direction: column;
   width: 70%;
   padding-top: 25px;
   padding-bottom: 14px;
@@ -140,4 +141,50 @@
 
 .logout-button:hover {
   cursor: pointer;
+}
+
+.post-follow-follower {
+  display: flex;
+  padding-top: 6px;
+  padding-bottom: 11px;
+  font-size: 17px;
+}
+
+.count {
+  font-weight: bold;
+}
+
+.category {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bio {
+  font-weight: bold;
+  margin: 5px 0 11px 0;
+  margin-bottom: 5px;
+}
+
+.bio-element {
+  margin-top: 5px;
+  max-width: 450px;
+  line-height: 1.2;
+}
+
+.edit-submit-errors {
+  font-family: 'helvetica';
+  color: red;
+  background-color: white;
+  font-size: 14px;
+}
+
+.edit-error-list {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
