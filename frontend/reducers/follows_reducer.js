@@ -7,10 +7,11 @@ const followsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch(action.type){
     case RECEIVE_FOLLOW:
-      return Object.assign({}, oldState, {[action.follow.id]: action.follow});
+      return Object.assign({}, oldState, {[action.follow.user_id]: action.follow});
     case REMOVE_FOLLOW:
       let newState = Object.assign({}, oldState);
-      delete newState[action.follow.id];
+      debugger;
+      delete newState[action.followshipId];
       return newState;
     default:
       return oldState;

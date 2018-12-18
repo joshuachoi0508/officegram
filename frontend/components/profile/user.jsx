@@ -5,7 +5,12 @@ class User extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = ({
+      loading: false
+    })
+
     this.renderImages = this.renderImages.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -45,7 +50,50 @@ class User extends React.Component {
     return posts.reverse();
   }
 
+  renderFollowButton() {
+    if (this.props.following) {
+      return (
+        <button
+          className="follow-button"
+          onClick={() => this.handleClick("delete")}
+          >unfollow
+        </button>
+      )
+    }
+
+    return (
+      <button
+        className="follow-button"
+        onClick={() => this.handleClick("create")}
+        >follow
+      </button>
+    )
+  }
+
+
+  handleClick(action) {
+    if(action === "delete") {
+      this.props.deleteFollow(this.props.userId)
+        .then(this.setState({loading: true}))
+        .then(this.props.fetchUser(this.props.userId))
+    }
+
+    if (action === "create") {
+      this.props.createFollow({user_id: this.props.userId})
+        .then(this.setState({loading: true}))
+        .then(this.props.fetchUser(this.props.userId))
+    }
+  }
+
   render(){
+    if (this.props.loading) {
+      return(
+        <div className='circle-loader-container'>
+          <CircleLoader />
+        </div>
+      )
+    }
+
     if (!this.props.user){
       return(
         <div className='circle-loader-container'>
@@ -64,14 +112,14 @@ class User extends React.Component {
             <li className="profile-info-container">
               <div className="name-and-edit-container">
                 <p className="username">{this.props.user.username}</p>
-                <button className="follow-button">Follow</button>
+                {this.renderFollowButton()}
               </div>
               <div className="post-follow-follower">
                 <p className="count">{this.props.images.length}</p>
                 <p className="category">posts</p>
-                <p className="count">0</p>
+                <p className="count">{this.props.user.followers.length}</p>
                 <p className="category">followers</p>
-                <p className="count">0</p>
+                <p className="count">{this.props.user.followings.length}</p>
                 <p className="category">following</p>
               </div>
               <div className="bio-container">

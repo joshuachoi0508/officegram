@@ -33,13 +33,13 @@ class User < ApplicationRecord
 
   has_many :followeeships,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :follower_id,
     class_name: 'Follow',
     dependent: :destroy
 
   has_many :followerships,
     primary_key: :id,
-    foreign_key: :follower_id,
+    foreign_key: :user_id,
     class_name: 'Follow',
     dependent: :destroy
 
@@ -50,13 +50,13 @@ class User < ApplicationRecord
     dependent: :destroy
 
 
-  has_many :followers,
-    through: :followerships,
-    source: :follower
-
   has_many :followings,
     through: :followeeships,
     source: :following
+
+  has_many :followers,
+    through: :followerships,
+    source: :follower
 
   has_many :following_photos,
     through: :followings,

@@ -1,7 +1,7 @@
 import * as FollowAPIUtil from '../util/follow_api_util';
 
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
-export const REMOVE_FOLLOW = 'FOLLOW'
+export const REMOVE_FOLLOW = 'REMOVE_FOLLOW'
 
 const receiveFollow = follow => ({
   type: RECEIVE_FOLLOW,
@@ -18,7 +18,7 @@ export const createFollow = follow => dispatch => (
     .then(follw => dispatch(receiveFollow(follow)))
 );
 
-const deleteFollow = followingId => dispatch => (
-  FollowAPIUtil.deleteFollow(followingId)
-    .then(follow => dispatch(removeFollow(follow)))
+export const deleteFollow = followshipId => dispatch => (
+  FollowAPIUtil.deleteFollow(followshipId)
+    .then(() => dispatch(removeFollow(followshipId)))
 );

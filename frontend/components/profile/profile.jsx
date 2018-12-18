@@ -50,9 +50,9 @@ class Profile extends React.Component {
               <div className="post-follow-follower">
                 <p className="count">{this.props.images.length}</p>
                 <p className="category">posts</p>
-                <p className="count">0</p>
+                <p className="count">{this.props.user.followers.length}</p>
                 <p className="category">followers</p>
-                <p className="count">0</p>
+                <p className="count">{this.props.user.followings.length}</p>
                 <p className="category">following</p>
               </div>
               <div className="bio-container">
