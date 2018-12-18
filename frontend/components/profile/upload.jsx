@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircleLoader } from 'react-spinners';
 
 class Upload extends React.Component {
   constructor(props){
@@ -8,7 +9,8 @@ class Upload extends React.Component {
       body: "",
       imageFile: null,
       imageUrl: "",
-      uploadErrors: []
+      uploadErrors: [],
+      loading: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,6 +54,7 @@ class Upload extends React.Component {
       formData.append('image[image]', this.state.imageFile);
     }
 
+    this.setState({loading: true})
     this.props.createImage(formData)
       .then(() => this.props.fetchUser(this.props.user.id))
       .then(() => this.props.history.push("/profile"))
@@ -68,6 +71,14 @@ class Upload extends React.Component {
   }
 
   render(){
+    if (this.state.loading) {
+      return (
+        <div className='circle-loader-container'>
+          <CircleLoader />
+        </div>
+      )
+    }
+
     return(
       <div className="upload">
         <p className='upload-page-title'>Upload Your Image</p>

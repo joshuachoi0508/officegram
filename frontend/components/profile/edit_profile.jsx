@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircleLoader } from 'react-spinners';
 
 class EditProfile extends React.Component {
   constructor(props){
@@ -10,7 +11,8 @@ class EditProfile extends React.Component {
       bio: this.props.user.bio,
       photoFile: null,
       photoUrl: this.props.user.photoUrl,
-      uploadErrors: []
+      uploadErrors: [],
+      loading: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,6 +58,7 @@ class EditProfile extends React.Component {
       formData.append('user[photo]', this.state.photoFile);
     }
 
+    this.setState({loading: true})
     this.props.updateUser(formData)
       .then(() => this.props.history.push("/profile"))
   }
@@ -72,6 +75,14 @@ class EditProfile extends React.Component {
 
 
   render(){
+    if (this.state.loading) {
+      return (
+        <div className='circle-loader-container'>
+          <CircleLoader />
+        </div>
+      )
+    }
+    
     return(
       <div className="edit-profile">
         <div className="edit-container">
