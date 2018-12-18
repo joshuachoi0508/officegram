@@ -1,5 +1,4 @@
-json.extract! user, :id, :username, :photo, :bio, :followers, :followings, :following_photos, :followeeships, :followerships 
-
+json.extract! user, :id, :username, :photo, :bio, :following_photos
 json.images do
   user.images.each do |image|
     json.set! image.id do
@@ -10,3 +9,6 @@ json.images do
 end
 
 json.photo_url url_for(user.photo)
+
+json.follower_ids user.followers.pluck(:id)
+json.following_ids user.followings.pluck(:id)

@@ -10,7 +10,6 @@ const followsReducer = (oldState = {}, action) => {
       return Object.assign({}, oldState, {[action.follow.user_id]: action.follow});
     case REMOVE_FOLLOW:
       let newState = Object.assign({}, oldState);
-      debugger;
       delete newState[action.followshipId];
       return newState;
     default:

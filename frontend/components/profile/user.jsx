@@ -5,10 +5,6 @@ class User extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = ({
-      loading: false
-    })
-
     this.renderImages = this.renderImages.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -74,14 +70,12 @@ class User extends React.Component {
   handleClick(action) {
     if(action === "delete") {
       this.props.deleteFollow(this.props.userId)
-        .then(this.setState({loading: true}))
-        .then(this.props.fetchUser(this.props.userId))
+        .then(() => this.props.fetchUser(this.props.userId))
     }
 
     if (action === "create") {
       this.props.createFollow({user_id: this.props.userId})
-        .then(this.setState({loading: true}))
-        .then(this.props.fetchUser(this.props.userId))
+        .then(() => this.props.fetchUser(this.props.userId))
     }
   }
 
@@ -117,9 +111,9 @@ class User extends React.Component {
               <div className="post-follow-follower">
                 <p className="count">{this.props.images.length}</p>
                 <p className="category">posts</p>
-                <p className="count">{this.props.user.followers.length}</p>
+                <p className="count">{this.props.user.followerIds.length}</p>
                 <p className="category">followers</p>
-                <p className="count">{this.props.user.followings.length}</p>
+                <p className="count">{this.props.user.followingIds.length}</p>
                 <p className="category">following</p>
               </div>
               <div className="bio-container">

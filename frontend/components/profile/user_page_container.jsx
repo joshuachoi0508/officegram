@@ -15,8 +15,8 @@ const mapStateToProps = (state, ownProps) => {
     images = Object.values(user.images);
   }
 
-  if (user && user.followers.length > 0) {
-    following = user.followers.map(obj => obj.id).includes(state.session.id);
+  if (user && user.followerIds.length > 0) {
+    following = user.followerIds.includes(state.session.id);
   }
 
   return ({

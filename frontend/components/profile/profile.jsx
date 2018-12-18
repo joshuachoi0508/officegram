@@ -8,6 +8,12 @@ class Profile extends React.Component {
     this.renderImages = this.renderImages.bind(this);
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.user !== this.props.user) {
+      this.props.fetchUser(this.props.userId)
+    }
+  }
+
   renderImages(){
     let posts = this.props.images.map(image => {
       return(
@@ -50,9 +56,9 @@ class Profile extends React.Component {
               <div className="post-follow-follower">
                 <p className="count">{this.props.images.length}</p>
                 <p className="category">posts</p>
-                <p className="count">{this.props.user.followers.length}</p>
+                <p className="count">{this.props.user.followerIds.length}</p>
                 <p className="category">followers</p>
-                <p className="count">{this.props.user.followings.length}</p>
+                <p className="count">{this.props.user.followingIds.length}</p>
                 <p className="category">following</p>
               </div>
               <div className="bio-container">

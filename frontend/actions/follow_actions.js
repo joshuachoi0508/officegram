@@ -15,10 +15,10 @@ const removeFollow = follow => ({
 
 export const createFollow = follow => dispatch => (
   FollowAPIUtil.createFollow(follow)
-    .then(follw => dispatch(receiveFollow(follow)))
+    .then(follow => dispatch(receiveFollow(follow)))
 );
 
 export const deleteFollow = followshipId => dispatch => (
   FollowAPIUtil.deleteFollow(followshipId)
-    .then(() => dispatch(removeFollow(followshipId)))
+    .then(follow => dispatch(removeFollow(follow)))
 );
