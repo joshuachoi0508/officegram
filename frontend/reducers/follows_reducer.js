@@ -16,3 +16,5 @@ const followsReducer = (oldState = {}, action) => {
       return oldState;
   }
 };
+
+export default followsReducer;
