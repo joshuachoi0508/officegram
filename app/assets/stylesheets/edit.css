@@ -160,3 +160,17 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.upload-profile-photo-errors {
+  font-family: 'helvetica';
+  color: red;
+  background-color: white;
+  font-size: 14px;
+  padding-left: 79px;
+}
+
+.upload-profile-photo-list {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}

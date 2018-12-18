@@ -46,6 +46,7 @@ class Upload extends React.Component {
     e.preventDefault();
 
     const formData = new FormData();
+
     formData.append('image[body]', this.state.body);
     if (this.state.imageFile) {
       formData.append('image[image]', this.state.imageFile);

@@ -3,7 +3,6 @@ import * as ImageAPIUtil from '../util/image_api_util';
 export const RECEIVE_ALL_IMAGES = 'RECEIVE_ALL_IMAGES';
 export const RECEIVE_ONE_IMAGE = 'RECEIVE_ONE_IMAGE';
 export const REMOVE_IMAGE = 'REMOVE_IMAGE'
-export const RECEIVE_USER_IMAGES = 'RECEIVE_USER_IMAGES';
 export const RECEIVE_IMAGE_ERRORS = 'RECEIVE_IMAGE_ERRORS';
 
 const receiveAllImages = images => ({
@@ -24,11 +23,6 @@ const removeImage = imageId => ({
 const receiveImageErrors = errors => ({
   type: RECEIVE_IMAGE_ERRORS,
   errors: errors
-});
-
-const receiveUserImages = images => ({
-  type: RECEIVE_USER_IMAGES,
-  images: images
 });
 
 export const fetchImages = () => dispatch => (
@@ -57,12 +51,6 @@ export const updateImage = image => dispatch => (
 export const deleteImage = imageId => dispatch => (
   ImageAPIUtil.deleteImage(imageId)
     .then(imageId => dispatch(removeImage(imageId)))
-);
-
-export const fetchUserImages = userId => dispatch => (
-  ImageAPIUtil.fetchUserImages(userId)
-    .then(images => dispatch(receiveUserImages(images)),
-           errors => dispatch(receiveImageErrors(errors.responseJSON)))
 );
 
 export const removeErrors = () => dispatch => (

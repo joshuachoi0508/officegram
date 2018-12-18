@@ -1,15 +1,12 @@
 import {
   RECEIVE_ALL_IMAGES,
   RECEIVE_ONE_IMAGE,
-  REMOVE_IMAGE,
-  RECEIVE_USER_IMAGES
+  REMOVE_IMAGE
 } from '../actions/image_actions';
 
 const imagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch(action.type){
-    case RECEIVE_USER_IMAGES:
-      return Object.assign({}, action.images);
     case RECEIVE_ALL_IMAGES:
       return Object.assign({}, action.images);
     case RECEIVE_ONE_IMAGE:
