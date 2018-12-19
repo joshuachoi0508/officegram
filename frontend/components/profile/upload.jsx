@@ -96,7 +96,6 @@ class Upload extends React.Component {
             maxLength="300"
             placeholder="Caption"
             />
-
           <input
             className="upload-file-selector"
             type="file"

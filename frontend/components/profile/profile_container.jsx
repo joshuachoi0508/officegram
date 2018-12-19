@@ -5,7 +5,6 @@ import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions'
 
 const mapStateToProps = (state, ownProps) => {
-
   const user = state.entities.users[state.session.id];
   let images = [];
 
