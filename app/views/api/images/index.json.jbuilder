@@ -1,6 +1,6 @@
 @images.each do |image|
   json.set! image.id do
-    json.extract! image, :id, :body, :user_id, :created_at
+    json.extract! image, :id, :body, :user_id, :created_at, :likes
     json.user_photo_url url_for(image.user.photo)
     json.username image.user.username
     json.image_url url_for(image.image)
