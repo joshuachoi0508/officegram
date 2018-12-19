@@ -22,6 +22,10 @@ class Image < ApplicationRecord
     foreign_key: :image_id,
     class_name: 'Like'
 
+  has_many :likers,
+    through: :likes,
+    source: :user
+
   has_many :comments,
     primary_key: :id,
     foreign_key: :image_id,

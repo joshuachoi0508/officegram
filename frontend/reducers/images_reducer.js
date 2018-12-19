@@ -5,7 +5,7 @@ import {
 } from '../actions/image_actions';
 import {
   RECEIVE_LIKE,
-  DELETE_LIKE
+  REMOVE_LIKE
 } from '../actions/like_actions';
 
 const imagesReducer = (oldState = {}, action) => {

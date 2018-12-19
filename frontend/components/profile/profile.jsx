@@ -1,5 +1,4 @@
 import React from 'react';
-import { CircleLoader } from 'react-spinners';
 
 class Profile extends React.Component {
   constructor(props){

@@ -47,3 +47,32 @@
 .index-image-link {
   text-decoration: none;
 }
+
+.index-image-info-bottom {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background: white;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.heart {
+  width: 26.5px;
+  height: 26.5px;
+}
+
+.comment-logo {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 1.6px;
+  margin-left: 3px;
+}
+
+.like-count {
+  
+}
