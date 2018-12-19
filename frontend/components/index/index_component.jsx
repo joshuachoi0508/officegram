@@ -15,10 +15,25 @@ class Index extends React.Component {
     let posts = this.props.indexImages.map(image => {
       return(
         <li key={`image-${image.id}`} className="index-image-container">
-          <img
-            className="image"
-            key={`image-${image.id}`}
-            src={image.imageUrl} />
+          <ul className="info-and-image">
+            <li className="index-image-info">
+              <a href={`#/users/${image.userId}`}>
+                <img
+                  className="index-image-profile-pic"
+                  src={image.userPhotoUrl} />
+              </a>
+              <a
+                href={`#/users/${image.userId}`}
+                className="index-image-link"
+                >
+                <p className="index-image-username">{image.username}</p>
+              </a>
+            </li>
+              <img
+                className="index-image"
+                key={`image-${image.id}`}
+                src={image.imageUrl} />
+          </ul>
         </li>
       )
     })

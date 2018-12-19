@@ -1,17 +1,49 @@
 .index {
   display: flex;
   justify-content: center;
-  padding: 100px;
-  padding-top: 125px;
-  padding-left: 157px;;
+  padding-top: 105px;
+  font-family: 'helvetica';
 }
 
 .index-image-container {
-  position: relative;
-  padding-top: 100%;
+  justify-content: center;
+  margin: 100px;
+  margin: 30px;
 }
 
 .index-images {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
+}
+
+.index-image {
+  width: 100%;
+}
+
+.index-image-info {
+  display: flex;
+  align-items: center;
+  padding: 11px;
+  background: white;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+}
+
+.index-image-profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.index-image-username {
+  color: black;
+  padding-left: 9px;
+  font-size: 17px;
+}
+
+.index-image-link {
+  text-decoration: none;
 }
