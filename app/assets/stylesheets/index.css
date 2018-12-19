@@ -1,7 +1,17 @@
 .index {
   display: flex;
-  background-color: #fafafa;
-  align-items: center;
   justify-content: center;
   padding: 100px;
+  padding-top: 125px;
+  padding-left: 157px;;
+}
+
+.index-image-container {
+  position: relative;
+  padding-top: 100%;
+}
+
+.index-images {
+  width: 100%;
+  max-width: 500px;
 }

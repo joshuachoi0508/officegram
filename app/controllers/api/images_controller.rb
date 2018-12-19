@@ -1,10 +1,6 @@
 class Api::ImagesController < ApplicationController
   def index
-    @images = Image.all
-  end
-
-  def show
-    @image = Image.find(params[:id])
+    @images = current_user.following_images.order("created_at DESC")
   end
 
   def create
