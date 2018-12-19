@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import EditProfile from './edit_profile';
-import { updateUser } from '../../actions/user_actions'
+import Index from './index_component';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[state.session.id]
 
+  debugger;
+
   return ({
     user: user,
-    errors: state.errors.user
+    images: user.followingImages
   })
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
-    updateUser: user => dispatch(updateUser(user))
   })
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

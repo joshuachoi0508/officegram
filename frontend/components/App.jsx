@@ -13,7 +13,7 @@ import UserPageContainer from './profile/user_page_container';
 import EditProfileContainer from './profile/edit_profile_container'
 
 //before having container
-import IndexComponent from './index/index_component'
+import IndexContainer from './index/index_container'
 import NavBar from './nav_bar/nav_bar'
 
 const App = (props) => {
@@ -27,7 +27,7 @@ const App = (props) => {
         <ProtectedRoute path='/profile' component={ProfileContainer} />
         <ProtectedRoute path='/upload' component={UploadContainer} />
         <ProtectedRoute path='/users/:id' component={UserPageContainer} />
-        <ProtectedRoute exact path='/' component={IndexComponent} />
+        <ProtectedRoute exact path='/' component={IndexContainer} />
         <Redirect to='/' />
       </Switch>
     </div>

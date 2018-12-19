@@ -39,14 +39,20 @@
 
 .search-input {
   font-family: 'helvetica';
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
   background-color: #fafafa;
   padding: 6px;
-  width: 199px;
+  padding-left: 37px;
+  width: 180px;
   height: 14px;
   border: 1px solid #efefef;
   border-radius: 3px;
   font-size: 15px;
   font-weight: lighter;
+}
+
+.search-input:focus {
+  background-color: #ffffff;;
 }
 
 .profile-logo {

@@ -4,6 +4,7 @@ import Profile from './profile';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   const user = state.entities.users[state.session.id];
   let images = [];
   if (user.images) {

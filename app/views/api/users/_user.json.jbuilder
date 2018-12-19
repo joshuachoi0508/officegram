@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :photo, :bio, :following_photos
+json.extract! user, :id, :username, :photo, :bio, :following_images
 json.images do
   user.images.each do |image|
     json.set! image.id do

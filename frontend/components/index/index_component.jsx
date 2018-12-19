@@ -1,6 +1,6 @@
 import React from 'react';
 
-class IndexComponent extends React.Component {
+class Index extends React.Component {
 
   render(){
     return(
@@ -12,4 +12,4 @@ class IndexComponent extends React.Component {
 
 }
 
-export default IndexComponent;
+export default Index;

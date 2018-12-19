@@ -14,9 +14,9 @@ class NavBar extends React.Component {
           </li>
           <li>
             <input type="text"
-              placeholder="               &#128269; search"
-              className="search-input"/
-              >
+              placeholder="             search"
+              className="search-input"
+              />
           </li>
           <li className="right-nav-bar">
             <a href="#/upload">
