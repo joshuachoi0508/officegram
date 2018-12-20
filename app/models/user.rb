@@ -62,6 +62,10 @@ class User < ApplicationRecord
     through: :followings,
     source: :images
 
+  has_many :liked_images,
+    through: :likes,
+    source: :image
+
   has_one_attached :photo
 
   def password=(password)

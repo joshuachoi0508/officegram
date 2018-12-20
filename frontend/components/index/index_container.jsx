@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Index from './index_component';
-import { fetchImages } from '../../actions/image_actions'
+import { fetchImages } from '../../actions/image_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let indexImages = [];
@@ -18,7 +19,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchImages: () => dispatch(fetchImages())
+    fetchImages: () => dispatch(fetchImages()),
+    createLike: like => dispatch(createLike(like)),
+    deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id))
   })
 };
 

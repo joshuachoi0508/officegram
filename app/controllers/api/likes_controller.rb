@@ -1,17 +1,19 @@
-class LikesController < ApplicationController
+class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     @like.user_id = current_user.id
     @like.save
+    render :show
   end
 
   def destroy
-    @like = Like.find_by_user_id(params[:id])
+    @like = Like.where(user_id: current_user.id).where(image_id: params[:id])[0]
     @like.destroy
+    render :show
   end
 
   private
   def like_params
-    params.require(:like).permit(:image_id)
+    params.require(:like).permit(:image_id, :user_id)
   end
 end

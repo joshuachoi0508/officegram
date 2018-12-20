@@ -11,6 +11,7 @@ class Index extends React.Component {
 
 
     this.renderImages = this.renderImages.bind(this);
+    this.renderCount = this.renderCount.bind(this);
   }
 
   componentDidMount(){
@@ -53,7 +54,7 @@ class Index extends React.Component {
                   src={window.images.comment_logo}
                 />
               </label>
-              <p className="like-count">{image.likerIds.length} likes</p>
+              {this.renderCount(image.likerIds.length)}
             </li>
           </ul>
         </li>
@@ -63,22 +64,40 @@ class Index extends React.Component {
     return posts.reverse();
   }
 
+  renderCount(length) {
+    if (length === 0) {
+      return (
+        <p></p>
+      )
+    } else if (length === 1) {
+      return (
+        <p className="like-count">{length} like</p>
+      )
+    } else {
+      return (
+        <p className="like-count">{length} likes</p>
+      )
+    }
+  }
+
   renderHeart(image){
     if (image.likerIds.includes(this.props.currentUserId)) {
       return (
         <img
           className="heart"
           src={window.images.full_heart}
+          onClick={() => this.props.deleteLike(image.id)}
           />
         )
-    } else {
-      return(
+      }
+
+    return (
       <img
         className="heart"
         src={window.images.empty_heart}
+        onClick={() => this.props.createLike({image_id: image.id})}
       />
       )
-    }
   }
 
   render(){

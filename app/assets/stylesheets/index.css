@@ -19,6 +19,7 @@
 }
 
 .index-image {
+  display: block;
   width: 100%;
 }
 
@@ -53,7 +54,6 @@
   flex-direction: column;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 4px;
   margin-bottom: 4px;
   background: white;
   border-left: 1px solid #efefef;
@@ -74,5 +74,5 @@
 }
 
 .like-count {
-  
+  margin-left: 3px;
 }
