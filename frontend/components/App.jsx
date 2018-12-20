@@ -11,12 +11,14 @@ import ProfileContainer from './profile/profile_container';
 import UploadContainer from './profile/upload_container';
 import UserPageContainer from './profile/user_page_container';
 import EditProfileContainer from './profile/edit_profile_container'
-
-//before having container
 import IndexContainer from './index/index_container'
 import NavBar from './nav_bar/nav_bar'
+// import Modal from './modal/modal';
+// import PhotoContainer from './profile/photo_container';
 
 const App = (props) => {
+  // <Modal />
+  // <ProtectedRoute path='/users/:userId/images/:imageId' component={PhotoContainer} />
   return (
     <div className="boss-div">
       <ProtectedRoute component={NavBar} />

@@ -28,9 +28,7 @@
   align-items: center;
   padding: 11px;
   background: white;
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
-  border-top: 1px solid #efefef;
+  border: 1px solid #efefef;
 }
 
 .index-image-profile-pic {

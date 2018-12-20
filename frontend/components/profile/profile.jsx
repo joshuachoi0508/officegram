@@ -2,7 +2,7 @@ import React from 'react';
 
 class Profile extends React.Component {
   constructor(props){
-    super(props);
+    super(props)
 
     this.renderImages = this.renderImages.bind(this);
   }

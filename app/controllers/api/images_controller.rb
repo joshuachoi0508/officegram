@@ -14,10 +14,21 @@ class Api::ImagesController < ApplicationController
     end
   end
 
+  def show
+    @image = Image.find(params[:id])
+    
+    if @image
+      render :show
+    else
+      render json: @image.errors.full_messages, status: 422
+    end
+  end
+
   def update
     @image = current_user.images.find(params[:id])
 
     if @image.update(image_params)
+      debugger
       render :show
     else
       render json: @image.errors.full_messages, status: 422

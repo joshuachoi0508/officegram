@@ -37,8 +37,6 @@ export const fetchImage = imageId => dispatch => {
 
 export const createImage = image => dispatch => (
   ImageAPIUtil.createImage(image)
-    .then(image => dispatch(receiveOneImage(image)),
-          errors => dispatch(receiveImageErrors(errors.responseJSON)))
 );
 
 export const updateImage = image => dispatch => (

@@ -66,7 +66,9 @@ class Index extends React.Component {
                   src={window.images.comment_logo}
                 />
               </label>
-              {this.renderCount(image.likerIds.length)}
+              { image.likerIds ?
+                this.renderCount(image.likerIds.length) : null
+              }
             </li>
           </ul>
         </li>
@@ -93,7 +95,7 @@ class Index extends React.Component {
   }
 
   renderHeart(image){
-    if (image.likerIds.includes(this.props.currentUserId)) {
+    if (image.likerIds && image.likerIds.includes(this.props.currentUserId)) {
       return (
         <img
           className="heart"
