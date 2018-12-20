@@ -63,6 +63,7 @@
 .heart {
   width: 26.5px;
   height: 26.5px;
+  cursor: pointer;
 }
 
 .comment-logo {

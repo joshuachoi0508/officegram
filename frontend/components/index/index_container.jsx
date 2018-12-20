@@ -6,7 +6,7 @@ import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let indexImages = [];
-
+  debugger;
   if (state.entities.images) {
     indexImages = Object.values(state.entities.images)
   }

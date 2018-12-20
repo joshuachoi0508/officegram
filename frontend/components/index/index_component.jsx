@@ -10,11 +10,6 @@ class Index extends React.Component {
       offset: 0
     }
 
- //    this.state = {
- //      loading: false,
- //      offset: 0
- //    }
- //
    window.addEventListener('scroll', () => {
      const { innerHeight } = window;
      const { scrollTop, offsetHeight } = document.documentElement;
