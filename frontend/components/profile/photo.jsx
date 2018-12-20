@@ -27,7 +27,9 @@ class Photo extends React.Component {
 
     return(
       <div className="photo-component">
-        <img src={this.props.image.imageUrl} />
+        <div className="photo-and-info">
+          <img src={this.props.image.imageUrl} className="photo" />
+        </div>
       </div>
     )
   }

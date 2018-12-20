@@ -9,9 +9,9 @@ function Modal({modal, closeModal}) {
   }
 
   let component;
-  switch (modal) {
+  switch (modal.type) {
     case 'photo':
-      component = <PhotoContainer />;
+      component = <PhotoContainer options={modal.options} />;
       break;
     default:
       return null;

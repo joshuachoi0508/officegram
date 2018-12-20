@@ -4,10 +4,10 @@ import Photo from './photo';
 import { fetchImage } from '../../actions/image_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const image = state.entities.images[ownProps.match.params.imageId];
+  const image = state.entities.images[ownProps.options.imageId];
 
   return ({
-    imageId: ownProps.match.params.imageId,
+    imageId: ownProps.options.imageId,
     image: image
   })
 }

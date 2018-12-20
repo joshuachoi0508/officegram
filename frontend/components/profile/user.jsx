@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CircleLoader } from 'react-spinners';
 
 class User extends React.Component {
@@ -35,7 +36,10 @@ class User extends React.Component {
             className="image"
             key={`image-${image.id}`}
             src={image.imageUrl} />
-          <ul className="image-stats">
+          <ul
+            className="image-stats"
+            onClick={() => this.props.openModal({userId: this.props.userId, imageId: image.id})}
+            >
             <li className="image-stats-info">LIKE</li>
             <li className="image-stats-info">COMMENTS</li>
           </ul>
@@ -98,6 +102,7 @@ class User extends React.Component {
 
     return(
       <div className="profile">
+        {this.props.modalForm}
         <div className="user-profile">
           <ul className="profile-info">
             <li className="profile-pic-container">

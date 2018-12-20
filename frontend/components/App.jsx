@@ -13,14 +13,13 @@ import UserPageContainer from './profile/user_page_container';
 import EditProfileContainer from './profile/edit_profile_container'
 import IndexContainer from './index/index_container'
 import NavBar from './nav_bar/nav_bar'
-// import Modal from './modal/modal';
-// import PhotoContainer from './profile/photo_container';
+import Modal from './modal/modal';
+import PhotoContainer from './profile/photo_container';
 
 const App = (props) => {
-  // <Modal />
-  // <ProtectedRoute path='/users/:userId/images/:imageId' component={PhotoContainer} />
   return (
     <div className="boss-div">
+      <Modal />
       <ProtectedRoute component={NavBar} />
       <Switch>
         <AuthRoute path='/login' component={LoginFormContainer} />

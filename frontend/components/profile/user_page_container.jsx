@@ -4,6 +4,7 @@ import User from './user';
 import { fetchUser } from '../../actions/user_actions';
 import { createFollow } from '../../actions/follow_actions';
 import { deleteFollow } from '../../actions/follow_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[ownProps.match.params.id];
@@ -32,7 +33,9 @@ const mapDispatchToProps = dispatch => {
   return ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: followershipId => dispatch(deleteFollow(followershipId))
+    deleteFollow: followershipId => dispatch(deleteFollow(followershipId)),
+    openModal: options => dispatch(openModal("photo", options)),
+    closeModal: () => dispatch(closeModal())
   })
 }
 
