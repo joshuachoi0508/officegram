@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import User from './user';
 import { fetchUser } from '../../actions/user_actions';
-import { createFollow } from '../../actions/follow_actions';
-import { deleteFollow } from '../../actions/follow_actions';
+import { deleteFollow, createFollow } from '../../actions/follow_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {

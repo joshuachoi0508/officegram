@@ -21,7 +21,10 @@ class Profile extends React.Component {
             className="image"
             key={`image-${image.id}`}
             src={image.imageUrl} />
-          <ul className="image-stats">
+          <ul
+            className="image-stats"
+            onClick={() => this.props.openModal({userId: this.props.user.id, imageId: image.id})}
+            >
             <li className="image-stats-info">LIKE</li>
             <li className="image-stats-info">COMMENTS</li>
           </ul>
