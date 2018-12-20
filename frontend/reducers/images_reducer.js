@@ -20,7 +20,7 @@ const imagesReducer = (oldState = {}, action) => {
       newState[action.like.imageId].likerIds = newState[action.like.imageId].likerIds.filter(id => id !== action.like.userId);
       return newState;
     case RECEIVE_ALL_IMAGES:
-      return Object.assign({}, action.images);
+      return Object.assign({}, oldState, action.images);
     case RECEIVE_ONE_IMAGE:
       return Object.assign({}, oldState, {[action.image.id]: action.image});
     case REMOVE_IMAGE:

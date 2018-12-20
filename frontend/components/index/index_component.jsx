@@ -6,9 +6,26 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      loading: false
+      loading: false,
+      offset: 0
     }
 
+ //    this.state = {
+ //      loading: false,
+ //      offset: 0
+ //    }
+ //
+   window.addEventListener('scroll', () => {
+     const { innerHeight } = window;
+     const { scrollTop, offsetHeight } = document.documentElement;
+
+     if (innerHeight + scrollTop > offsetHeight - 1) {
+       this.setState(state => ({
+         offset: state.offset + 5
+       }));
+       this.props.fetchImages(this.state.offset);
+     }
+   });
 
     this.renderImages = this.renderImages.bind(this);
     this.renderCount = this.renderCount.bind(this);
@@ -16,7 +33,7 @@ class Index extends React.Component {
 
   componentDidMount(){
     this.setState({loading: true})
-    this.props.fetchImages()
+    this.props.fetchImages(this.state.offset)
       .then(() => this.setState({loading: false}))
   }
 

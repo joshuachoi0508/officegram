@@ -25,15 +25,15 @@ const receiveImageErrors = errors => ({
   errors: errors
 });
 
-export const fetchImages = () => dispatch => (
-  ImageAPIUtil.fetchImages()
+export const fetchImages = offset => dispatch => (
+  ImageAPIUtil.fetchImages(offset)
     .then(images => dispatch(receiveAllImages(images)))
 );
 
-export const fetchImage = imageId => dispatch => (
+export const fetchImage = imageId => dispatch => {
   ImageAPIUtil.fetchImage(imageId)
     .then(image => dispatch(receiveOneImage(image)))
-);
+};
 
 export const createImage = image => dispatch => (
   ImageAPIUtil.createImage(image)

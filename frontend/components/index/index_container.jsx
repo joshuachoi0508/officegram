@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchImages: () => dispatch(fetchImages()),
+    fetchImages: offset => dispatch(fetchImages(offset)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id))
   })

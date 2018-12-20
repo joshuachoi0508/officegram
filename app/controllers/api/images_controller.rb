@@ -1,6 +1,6 @@
 class Api::ImagesController < ApplicationController
   def index
-    @images = current_user.following_images.order("created_at DESC")
+    @images = current_user.following_images.order("created_at DESC").limit(5).offset(params[:offset])
   end
 
   def create
