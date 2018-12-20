@@ -52,8 +52,7 @@
 .index-image-info-bottom {
   display: flex;
   flex-direction: column;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 10px 0 10px 10px;
   margin-bottom: 4px;
   background: white;
   border-left: 1px solid #efefef;
