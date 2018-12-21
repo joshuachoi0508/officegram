@@ -7,7 +7,9 @@ class Index extends React.Component {
 
     this.state = {
       loading: false,
-      offset: 0
+      offset: 0,
+      body: "",
+      imageId: 0
     }
 
    window.addEventListener('scroll', () => {
@@ -24,6 +26,7 @@ class Index extends React.Component {
 
     this.renderImages = this.renderImages.bind(this);
     this.renderCount = this.renderCount.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -31,6 +34,20 @@ class Index extends React.Component {
     this.props.fetchImages(this.state.offset)
       .then(() => this.setState({loading: false}))
   }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.createComment(
+      {
+        body: this.state.body,
+        image_id: this.state.imageId
+      }
+    )
+  }
+
+  update(field, imageId){
+    return e => this.setState({[field]: e.currentTarget.value, imageId: imageId})
+  };
 
   renderImages(){
     let posts = this.props.indexImages.map(image => {
@@ -69,6 +86,27 @@ class Index extends React.Component {
               { image.likerIds ?
                 this.renderCount(image.likerIds.length) : null
               }
+              <label className="comments">
+                {image.comments ?
+                  this.renderComments(image) :
+                  null
+                }
+              </label>
+              <label className="index-image-created-at">
+                { image.createdAt.toUpperCase() }
+              </label>
+              <form
+                className="comment-form"
+                onSubmit={this.handleSubmit}
+                >
+                <div className="comment-divider"></div>
+                <input
+                  type="text"
+                  className="comment-input"
+                  placeholder="Add a comment..."
+                  onChange={this.update("body", image.id)}
+                  />
+              </form>
             </li>
           </ul>
         </li>
@@ -78,6 +116,16 @@ class Index extends React.Component {
     return posts.reverse();
   }
 
+  renderComments(image){
+    return(
+      Object.values(image.comments).map(comment => {
+        return (
+          <p key={`comment-${comment.id}`}>{comment.body}</p>
+        )
+      })
+    )
+  }
+
   renderCount(length) {
     if (length === 0) {
       return (
@@ -85,11 +133,11 @@ class Index extends React.Component {
       )
     } else if (length === 1) {
       return (
-        <p className="like-count">{length} like</p>
+        <p className="index-like-count">{length} like</p>
       )
     } else {
       return (
-        <p className="like-count">{length} likes</p>
+        <p className="index-like-count">{length} likes</p>
       )
     }
   }

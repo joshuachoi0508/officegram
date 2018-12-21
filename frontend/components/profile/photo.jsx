@@ -128,7 +128,7 @@ class Photo extends React.Component {
               }
             </label>
             <label className="image-created-at">
-              {this.props.image.createdAt}
+              {this.props.image.createdAt.toUpperCase()}
             </label>
           </li>
         </ul>

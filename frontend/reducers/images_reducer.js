@@ -4,16 +4,36 @@ import {
   REMOVE_IMAGE,
   REMOVE_IMAGES
 } from '../actions/image_actions';
+
 import {
   RECEIVE_LIKE,
   REMOVE_LIKE
 } from '../actions/like_actions';
+
+import {
+  RECEIVE_COMMENT,
+  REMOVE_COMMENT,
+  RECEIVE_COMMENTS
+} from '../actions/comment_actions';
 
 const imagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
 
   switch(action.type){
+    case RECEIVE_COMMENT:
+
+      if (newState[action.comment.imageId].comments) {
+        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
+      } else {
+        newState[action.comment.imageId].comments = {};
+        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
+      }
+      
+      return newState
+    case REMOVE_COMMENT:
+      delete newState[action.comment.imageId].comments[action.comment.id]
+      return newState
     case RECEIVE_LIKE:
       newState[action.like.imageId].likerIds.push(action.like.userId);
       return newState;
