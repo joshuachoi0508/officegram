@@ -7,6 +7,10 @@ class Profile extends React.Component {
     this.renderImages = this.renderImages.bind(this);
   }
 
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
+
   componentDidUpdate(prevProps){
     if (prevProps.user !== this.props.user) {
       this.props.fetchUser(this.props.userId)

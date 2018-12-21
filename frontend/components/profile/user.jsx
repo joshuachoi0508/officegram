@@ -11,6 +11,8 @@ class User extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     setTimeout(() => this.props.fetchUser(this.props.userId), 500)
 
     if (parseInt(this.props.userId) === this.props.session.id) {

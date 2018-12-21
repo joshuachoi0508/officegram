@@ -3,7 +3,7 @@ import React from 'react';
 import Index from './index_component';
 import { fetchImages } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
-import { createComment } from '../../actions/comment_actions'
+import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let indexImages = [];

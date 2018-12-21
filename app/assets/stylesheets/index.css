@@ -90,6 +90,7 @@
   min-height: 32px;
   font-size: 14px;
   margin-left: 2px;
+  width: 550px;
 }
 
 .comments {
@@ -112,4 +113,9 @@
   font-weight: bold;
   margin-right: 4.2px;
   padding: 4px 0 4px 0;
+}
+
+.comment-username-link {
+  color: black;
+  text-decoration: none;
 }

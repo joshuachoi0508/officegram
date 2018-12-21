@@ -8,6 +8,7 @@
           json.username comment.user.username
           json.body comment.body
           json.image_id comment.image_id
+          json.user_id comment.user_id
         end
       end
     end
