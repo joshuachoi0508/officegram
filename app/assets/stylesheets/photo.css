@@ -62,3 +62,12 @@
   margin-bottom: 1.6px;
   margin-left: 3px;
 }
+
+.like-count-photo {
+  padding: 2px 0 2px 0;
+}
+
+.image-created-at {
+  display: flex;
+  padding: 2px 0 2px 0;
+}
