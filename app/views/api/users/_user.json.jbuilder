@@ -4,6 +4,8 @@ json.images do
     json.set! image.id do
       json.extract! image, :id, :body, :user_id, :user
       json.image_url url_for(image.image)
+      json.liker_ids image.likers.pluck(:id)
+      json.created_at image.created_at.to_time.to_formatted_s(:long).split(",")[0]
     end
   end
 end

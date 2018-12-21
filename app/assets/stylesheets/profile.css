@@ -63,6 +63,9 @@
 .image-stats-info {
   font-family: 'helvetica';
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-profile {
@@ -198,4 +201,28 @@
   display: flex;
   padding-top: 200px;
   justify-content: center;
+}
+
+.white-heart {
+  width: 15%;
+  margin-right: 5px;
+}
+
+.like-count {
+  font-size: 24px;
+}
+
+.likes {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
 }

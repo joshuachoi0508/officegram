@@ -25,8 +25,18 @@ class Profile extends React.Component {
             className="image-stats"
             onClick={() => this.props.openModal({userId: this.props.user.id, imageId: image.id})}
             >
-            <li className="image-stats-info">LIKE</li>
-            <li className="image-stats-info">COMMENTS</li>
+            <li className="image-stats-info">
+              <label className="likes">
+                <img
+                  className="white-heart"
+                  src={window.images.white_heart}
+                  />
+                <p className="like-count">{image.likerIds.length}</p>
+              </label>
+              <label className="comment">
+                COMMENT
+              </label>
+            </li>
           </ul>
         </li>
       )

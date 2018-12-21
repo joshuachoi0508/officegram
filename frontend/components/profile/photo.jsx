@@ -127,7 +127,7 @@ class Photo extends React.Component {
                 this.renderCount(this.state.count) : null
               }
             </label>
-            <label>
+            <label className="image-created-at">
               {this.props.image.createdAt}
             </label>
           </li>
