@@ -94,9 +94,22 @@
 
 .comments {
   margin-left: 3px;
+  font-size: 14px;
 }
 
 .comment-divider {
   background: #efefef;
   height: 1px;
+}
+
+.comment-and-username {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-username {
+  font-weight: bold;
+  margin-right: 4.2px;
+  padding: 4px 0 4px 0;
 }

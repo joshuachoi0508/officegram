@@ -22,14 +22,13 @@ const imagesReducer = (oldState = {}, action) => {
 
   switch(action.type){
     case RECEIVE_COMMENT:
-
       if (newState[action.comment.imageId].comments) {
         newState[action.comment.imageId].comments[action.comment.id] = action.comment;
       } else {
         newState[action.comment.imageId].comments = {};
         newState[action.comment.imageId].comments[action.comment.id] = action.comment;
       }
-      
+
       return newState
     case REMOVE_COMMENT:
       delete newState[action.comment.imageId].comments[action.comment.id]
