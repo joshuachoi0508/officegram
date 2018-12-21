@@ -41,11 +41,24 @@
 
 .photo-divider {
   height: 1px;
-  color: #efefef;
+  width: 87%;
+  align-self: center;
+  background: #efefef;
 }
 
 .caption-and-comment {
   width: 287px;
-  height: 348px;
+  height: 55%;
   padding: 12px 24px 12px 24px;
+}
+
+.likes-and-comment {
+  padding: 6px 24px 2px 24px
+}
+
+.comment-logo-photo {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 1.6px;
+  margin-left: 3px;
 }
