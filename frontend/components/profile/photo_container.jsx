@@ -5,10 +5,12 @@ import { fetchImage } from '../../actions/image_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const image = state.entities.images[ownProps.options.imageId];
+  const user = state.entities.users[ownProps.options.userId];
 
   return ({
     imageId: ownProps.options.imageId,
-    image: image
+    image: image,
+    user: user
   })
 }
 

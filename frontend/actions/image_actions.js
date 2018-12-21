@@ -4,6 +4,7 @@ export const RECEIVE_ALL_IMAGES = 'RECEIVE_ALL_IMAGES';
 export const RECEIVE_ONE_IMAGE = 'RECEIVE_ONE_IMAGE';
 export const REMOVE_IMAGE = 'REMOVE_IMAGE'
 export const RECEIVE_IMAGE_ERRORS = 'RECEIVE_IMAGE_ERRORS';
+export const REMOVE_IMAGES = 'REMOVE_IMAGES';
 
 const receiveAllImages = images => ({
   type: RECEIVE_ALL_IMAGES,
@@ -24,6 +25,10 @@ const receiveImageErrors = errors => ({
   type: RECEIVE_IMAGE_ERRORS,
   errors: errors
 });
+
+const removeImages = () => ({
+  type: REMOVE_IMAGES
+})
 
 export const fetchImages = offset => dispatch => (
   ImageAPIUtil.fetchImages(offset)
@@ -53,4 +58,8 @@ export const deleteImage = imageId => dispatch => (
 
 export const removeErrors = () => dispatch => (
   dispatch(receiveImageErrors([]))
+);
+
+export const deleteImages = () => dispatch => (
+  dispatch(removeImages())
 );
