@@ -1,0 +1,1 @@
+@users.extract! :username, :id
