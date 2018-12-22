@@ -11,7 +11,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    
     @comment = Follow.find(params[:id])
     @comment.destroy
     render :show
