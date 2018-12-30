@@ -7,6 +7,7 @@ json.images do
       json.image_url url_for(image.image)
       json.liker_ids image.likers.pluck(:id)
       json.created_at image.created_at.to_time.to_formatted_s(:long).split(",")[0]
+      json.comments image.comments
     end
   end
 end

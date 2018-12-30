@@ -130,3 +130,22 @@
   margin-left: auto;
   cursor: pointer;
 }
+
+.caption-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 3px;
+  font-size: 14px;
+}
+
+.caption-username-link {
+  color: black;
+  text-decoration: none;
+}
+
+.caption-username {
+  font-weight: bold;
+  margin-right: 4.2px;
+  padding: 4px 0 4px 0;
+}

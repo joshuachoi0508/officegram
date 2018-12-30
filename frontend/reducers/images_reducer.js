@@ -44,7 +44,7 @@ const imagesReducer = (oldState = {}, action) => {
     case RECEIVE_ONE_IMAGE:
       return Object.assign({}, oldState, {[action.image.id]: action.image});
     case REMOVE_IMAGE:
-      delete newState[action.imageId];
+      delete newState[action.image.id];
       return newState;
     case REMOVE_IMAGES:
       return {};

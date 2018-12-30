@@ -64,8 +64,6 @@
   font-family: 'helvetica';
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .user-profile {
@@ -217,12 +215,23 @@
   width: 50%;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .comment {
   display: flex;
   width: 50%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 10px;
+}
+
+.white-comment {
+  width: 15%;
+  margin-right: 2px;
+}
+
+.comment-count {
+  font-size: 1.3em;
 }

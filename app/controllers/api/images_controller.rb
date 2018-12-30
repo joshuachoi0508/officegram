@@ -38,7 +38,7 @@ class Api::ImagesController < ApplicationController
     @image = Image.find(params[:id])
 
     if @image.destroy
-      render json: @image.id
+      render :show
     else
       render json: @image.errors.full_messages, status: 422
     end

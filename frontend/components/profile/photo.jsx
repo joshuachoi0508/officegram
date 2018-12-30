@@ -11,6 +11,7 @@ class Photo extends React.Component {
     }
 
     this.renderCount = this.renderCount.bind(this);
+    this.renderDeleteButton = this.renderDeleteButton.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +83,17 @@ class Photo extends React.Component {
     }
   }
 
+  renderDeleteButton(image){
+    return (
+      <img
+        className="trash"
+        src={window.images.trash}
+        onClick={() => this.props.deleteImage(image.id)
+          .then(this.props.closeModal())}
+      />
+    )
+  }
+
   render(){
     if (!this.props.image) {
       return (
@@ -109,6 +121,10 @@ class Photo extends React.Component {
                 {this.props.user.username}
               </p>
             </a>
+            {this.props.user.id === this.props.currentUserId ? 
+              this.renderDeleteButton(this.props.image) :
+              null
+            }
           </li>
           <div className="photo-divider"></div>
           <li className="caption-and-comment">

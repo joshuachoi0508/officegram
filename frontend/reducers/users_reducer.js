@@ -7,12 +7,19 @@ import {
   RECEIVE_FOLLOW,
   REMOVE_FOLLOW
  } from '../actions/follow_actions'
-
+import { REMOVE_IMAGE } from '../actions/image_actions';
+import {
+  RECEIVE_LIKE,
+  REMOVE_LIKE
+} from '../actions/like_actions';
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)
 
   switch(action.type){
+    case REMOVE_IMAGE:
+      delete nextState[action.image.userId].images[action.image.id]
+      return nextState;
     case RECEIVE_FOLLOW:
       nextState[action.follow.userId].followerIds.push(action.follow.followerId);
       nextState[action.follow.followerId].followingIds.push(action.follow.userId);
@@ -31,6 +38,12 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser })
     case RECEIVE_USER:
       return Object.assign({}, state, { [action.user.id]: action.user })
+    case RECEIVE_LIKE:
+      nextState[action.like.receiver.id].images[action.like.imageId].likerIds.push(action.like.userId)
+      return nextState;
+    case REMOVE_LIKE:
+      nextState[action.like.receiver.id].images[action.like.imageId].likerIds = nextState[action.like.receiver.id].images[action.like.imageId].likerIds.filter(likerId => likerId !== action.like.userId)
+      return nextState;
     default:
       return state;
   }

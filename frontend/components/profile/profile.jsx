@@ -38,7 +38,11 @@ class Profile extends React.Component {
                 <p className="like-count">{image.likerIds.length}</p>
               </label>
               <label className="comment">
-                COMMENT
+                <img
+                  className="white-comment"
+                  src={window.images.white_comment}
+                />
+                <p className="comment-count">{image.comments.length}</p>
               </label>
             </li>
           </ul>

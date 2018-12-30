@@ -48,12 +48,13 @@
 
 .caption-and-comment {
   width: 287px;
-  height: 55%;
+  height: 65%;
   padding: 12px 24px 12px 24px;
 }
 
 .likes-and-comment {
-  padding: 6px 24px 2px 24px
+  padding: 6px 24px 2px 24px;
+  height: 25%;
 }
 
 .comment-logo-photo {
@@ -73,4 +74,11 @@
   letter-spacing: .2px;
   color: #999;
   margin: 10px 0 10px 3px;
+}
+
+.trash {
+    margin-left: auto;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
 }

@@ -16,9 +16,9 @@ const receiveOneImage = image => ({
   image: image
 });
 
-const removeImage = imageId => ({
+const removeImage = image => ({
   type: REMOVE_IMAGE,
-  imageId: imageId
+  image
 });
 
 const receiveImageErrors = errors => ({
@@ -53,7 +53,7 @@ export const updateImage = image => dispatch => (
 
 export const deleteImage = imageId => dispatch => (
   ImageAPIUtil.deleteImage(imageId)
-    .then(imageId => dispatch(removeImage(imageId)))
+    .then(image => dispatch(removeImage(image)))
 );
 
 export const removeErrors = () => dispatch => (

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Photo from './photo';
-import { fetchImage, deleteImages } from '../../actions/image_actions';
+import { fetchImage, deleteImages, deleteImage } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const image = state.entities.images[ownProps.options.imageId];
@@ -21,7 +22,9 @@ const mapDispatchToProps = dispatch => {
     fetchImage: imageId => dispatch(fetchImage(imageId)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id)),
-    deleteImages: () => dispatch(deleteImages())
+    deleteImages: () => dispatch(deleteImages()),
+    deleteImage: imageId => dispatch(deleteImage(imageId)),
+    closeModal: () => dispatch(closeModal())
   })
 }
 

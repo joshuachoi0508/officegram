@@ -28,6 +28,7 @@ class Index extends React.Component {
     this.renderCount = this.renderCount.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderRemoveIcon = this.renderRemoveIcon.bind(this);
+    this.renderCaption = this.renderCaption.bind(this);
   }
 
   componentDidMount(){
@@ -88,6 +89,12 @@ class Index extends React.Component {
               { image.likerIds ?
                 this.renderCount(image.likerIds.length) : null
               }
+              <label>
+                {image.body.length > 0 ? 
+                  this.renderCaption(image) :
+                  null
+                }
+              </label>
               <label className="comments">
                 {image.comments ?
                   this.renderComments(image) :
@@ -117,6 +124,21 @@ class Index extends React.Component {
     })
 
     return posts.reverse();
+  }
+
+  renderCaption(image){
+    return (
+      <div className="caption-div">
+        <a className="caption-username-link" href={`#/users/${image.userId}`}>
+          <p className="caption-username">
+            {image.username}
+          </p>
+        </a>
+        <p className="caption-body">
+          {image.body}
+        </p>
+      </div>
+    )
   }
 
   renderComments(image){
