@@ -27,6 +27,7 @@ class Index extends React.Component {
     this.renderImages = this.renderImages.bind(this);
     this.renderCount = this.renderCount.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderRemoveIcon = this.renderRemoveIcon.bind(this);
   }
 
   componentDidMount(){
@@ -37,12 +38,13 @@ class Index extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+
     this.props.createComment(
       {
         body: this.state.body,
         image_id: this.state.imageId
       }
-    )
+    ).then(this.setState({body: ""}))
   }
 
   update(field, imageId){
@@ -104,6 +106,7 @@ class Index extends React.Component {
                   type="text"
                   className="comment-input"
                   placeholder="Add a comment..."
+                  value={this.state.body}
                   onChange={this.update("body", image.id)}
                   />
               </form>
@@ -135,9 +138,26 @@ class Index extends React.Component {
               >
               {comment.body}
             </p>
+            {this.renderRemoveIcon(comment)}
           </div>
         )
       })
+    )
+  }
+
+  renderRemoveIcon(comment) {
+    if (comment.userId === this.props.currentUserId) {
+      return (
+        <img
+          className="remove-icon"
+          src={window.images.remove_comment}
+          onClick={() => this.props.deleteComment(comment.id)}
+        />
+      )
+    } 
+
+    return (
+      null
     )
   }
 

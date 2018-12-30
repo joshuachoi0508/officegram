@@ -21,5 +21,5 @@ export const createComment = comment => dispatch => (
 
 export const deleteComment = commentId => dispatch => (
   CommentAPIUtil.deleteComment(commentId)
-    .then(comment => dispatch(removeFollow(comment)))
+    .then(comment => dispatch(removeComment(comment)))
 );

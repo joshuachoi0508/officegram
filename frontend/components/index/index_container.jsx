@@ -3,7 +3,7 @@ import React from 'react';
 import Index from './index_component';
 import { fetchImages } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let indexImages = [];
@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch => {
     fetchImages: offset => dispatch(fetchImages(offset)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id)),
-    createComment: comment => dispatch(createComment(comment))
+    createComment: comment => dispatch(createComment(comment)),
+    deleteComment: commentId => dispatch(deleteComment(commentId))
   })
 };
 
