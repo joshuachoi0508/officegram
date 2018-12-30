@@ -117,7 +117,6 @@ class Index extends React.Component {
   }
 
   renderComments(image){
-    debugger;
     return(
       Object.values(image.comments).map(comment => {
         return (
