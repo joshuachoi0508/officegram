@@ -109,6 +109,7 @@
   flex-direction: row;
   align-items: baseline;
   padding: 4px 0 4px 0;
+  line-height: normal;
 }
 
 .comment-username-link {
