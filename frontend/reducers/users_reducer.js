@@ -23,12 +23,12 @@ const usersReducer = (state = {}, action) => {
 
   switch(action.type){
     case RECEIVE_COMMENT:
-      if (nextState[action.comment.receiverId].images) {
+      if (nextState[action.comment.receiverId]) {
         nextState[action.comment.receiverId].images[action.comment.imageId].comments.push(action.comment);
       }
       return nextState
     case REMOVE_COMMENT:
-      if (nextState[action.comment.receiverId].images) {
+      if (nextState[action.comment.receiverId]) {
         nextState[action.comment.receiverId].images[action.comment.imageId].comments = nextState[action.comment.receiverId].images[action.comment.imageId].comments.filter(comment => comment.id !== action.comment.id)
       }
       return nextState
