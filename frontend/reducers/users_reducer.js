@@ -22,6 +22,16 @@ const usersReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state)
 
   switch(action.type){
+    case RECEIVE_COMMENT:
+      if (nextState[action.comment.receiverId].images) {
+        nextState[action.comment.receiverId].images[action.comment.imageId].comments.push(action.comment);
+      }
+      return nextState
+    case REMOVE_COMMENT:
+      if (nextState[action.comment.receiverId].images) {
+        nextState[action.comment.receiverId].images[action.comment.imageId].comments = nextState[action.comment.receiverId].images[action.comment.imageId].comments.filter(comment => comment.id !== action.comment.id)
+      }
+      return nextState
     case REMOVE_IMAGE:
       delete nextState[action.image.userId].images[action.image.id]
       return nextState;

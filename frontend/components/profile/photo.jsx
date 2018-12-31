@@ -39,6 +39,21 @@ class Photo extends React.Component {
     this.props.deleteImages()
   }
 
+  renderCaption(image) {
+    return (
+      <div className="caption-div">
+        <a className="caption-username-link" href={`#/users/${image.userId}`}>
+          <p className="caption-username">
+            {image.username}
+          </p>
+        </a>
+        <p className="caption-body">
+          {image.body}
+        </p>
+      </div>
+    )
+  }
+
   renderHeart(image){
     if (this.state.like === true) {
       return (
@@ -187,6 +202,12 @@ class Photo extends React.Component {
           </li>
           <div className="photo-divider"></div>
           <li className="caption-and-comment">
+            <label>
+              {this.props.image.body.length > 0 ?
+                this.renderCaption(this.props.image) :
+                null
+              }
+            </label>
             <ul className="comments">
               {this.props.image.comments ?
                 this.renderComments(this.props.image) :

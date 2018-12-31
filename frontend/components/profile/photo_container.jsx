@@ -7,6 +7,7 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
+
   const image = state.entities.images[ownProps.options.imageId];
   const user = state.entities.users[ownProps.options.userId];
 
