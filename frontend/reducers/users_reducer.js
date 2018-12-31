@@ -39,10 +39,14 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return Object.assign({}, state, { [action.user.id]: action.user })
     case RECEIVE_LIKE:
-      nextState[action.like.receiver.id].images[action.like.imageId].likerIds.push(action.like.userId)
+      if ([action.like.receiver.id].images) {
+        nextState[action.like.receiver.id].images[action.like.imageId].likerIds.push(action.like.userId)
+      }
       return nextState;
     case REMOVE_LIKE:
-      nextState[action.like.receiver.id].images[action.like.imageId].likerIds = nextState[action.like.receiver.id].images[action.like.imageId].likerIds.filter(likerId => likerId !== action.like.userId)
+      if ([action.like.receiver.id].images) {
+        nextState[action.like.receiver.id].images[action.like.imageId].likerIds = nextState[action.like.receiver.id].images[action.like.imageId].likerIds.filter(likerId => likerId !== action.like.userId)
+      }
       return nextState;
     default:
       return state;
