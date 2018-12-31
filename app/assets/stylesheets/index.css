@@ -134,7 +134,7 @@
 .caption-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   margin-left: 3px;
   font-size: 14px;
 }
