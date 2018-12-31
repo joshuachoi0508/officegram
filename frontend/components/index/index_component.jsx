@@ -130,14 +130,12 @@ class Index extends React.Component {
   renderCaption(image){
     return (
       <div className="caption-div">
-        <a className="caption-username-link" href={`#/users/${image.userId}`}>
-          <p className="caption-username">
+        <label>
+          <a className="caption-username-link" href={`#/users/${image.userId}`}>
             {image.username}
-          </p>
-        </a>
-        <p className="caption-body">
+          </a>
           {image.body}
-        </p>
+        </label>
       </div>
     )
   }
