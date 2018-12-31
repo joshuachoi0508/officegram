@@ -32,6 +32,7 @@ class Index extends React.Component {
   }
 
   componentDidMount(){
+    this.props.deleteImages()
     this.setState({loading: true})
     this.props.fetchImages(this.state.offset)
       .then(() => this.setState({loading: false}))

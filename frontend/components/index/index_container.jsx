@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Index from './index_component';
-import { fetchImages } from '../../actions/image_actions';
+import { fetchImages, deleteImages } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import { createComment, deleteComment } from '../../actions/comment_actions';
 
@@ -27,7 +27,8 @@ const mapDispatchToProps = dispatch => {
     createLike: like => dispatch(createLike(like)),
     deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id)),
     createComment: comment => dispatch(createComment(comment)),
-    deleteComment: commentId => dispatch(deleteComment(commentId))
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
+    deleteImages: () => dispatch(deleteImages())
   })
 };
 
