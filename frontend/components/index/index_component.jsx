@@ -147,20 +147,12 @@ class Index extends React.Component {
       Object.values(image.comments).map(comment => {
         return (
           <div key={`comments-${comment.id}`} className="comment-and-username">
+            <label>
             <a className="comment-username-link" href={`#/users/${comment.userId}`}>
-              <p
-                key={`comment-user-id-${comment.id}`}
-                className="comment-username"
-                >
                 {comment.username}
-              </p>
             </a>
-            <p
-              key={`comment-${comment.body}`}
-              className="comment-body"
-              >
               {comment.body}
-            </p>
+            </label>
             {this.renderRemoveIcon(comment)}
           </div>
         )

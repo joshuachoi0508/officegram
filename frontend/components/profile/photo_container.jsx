@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     imageId: ownProps.options.imageId,
     image: image,
     user: user,
-    currentUserId: state.session.id,
+    currentUserId: state.session.id
   })
 }
 

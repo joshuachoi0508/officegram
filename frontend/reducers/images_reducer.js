@@ -23,7 +23,7 @@ const imagesReducer = (oldState = {}, action) => {
     case RECEIVE_COMMENT:
       if (newState[action.comment.imageId].comments) {
         newState[action.comment.imageId].comments[action.comment.id] = action.comment;
-      } else {
+      } else if (newState[action.comment.imageId]) {
         newState[action.comment.imageId].comments = {};
         newState[action.comment.imageId].comments[action.comment.id] = action.comment;
       }

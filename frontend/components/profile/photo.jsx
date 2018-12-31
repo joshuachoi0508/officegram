@@ -21,7 +21,6 @@ class Photo extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-
       if (this.props.image && this.state.like === null) {
         this.setState({like: this.props.image.likerIds.includes(this.props.currentUserId)})
       }
@@ -132,20 +131,12 @@ class Photo extends React.Component {
       Object.values(image.comments).map(comment => {
         return (
           <div key={`comments-${comment.id}`} className="comment-and-username">
-            <a className="comment-username-link" href={`#/users/${comment.userId}`}>
-              <p
-                key={`comment-user-id-${comment.id}`}
-                className="comment-username"
-              >
+            <label>
+              <a className="comment-username-link" href={`#/users/${comment.userId}`}>
                 {comment.username}
-              </p>
-            </a>
-            <p
-              key={`comment-${comment.body}`}
-              className="comment-body"
-            >
+              </a>
               {comment.body}
-            </p>
+            </label>
             {this.renderRemoveIcon(comment)}
           </div>
         )
