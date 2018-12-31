@@ -12,8 +12,7 @@ import {
 
 import {
   RECEIVE_COMMENT,
-  REMOVE_COMMENT,
-  RECEIVE_COMMENTS
+  REMOVE_COMMENT
 } from '../actions/comment_actions';
 
 const imagesReducer = (oldState = {}, action) => {
@@ -28,7 +27,6 @@ const imagesReducer = (oldState = {}, action) => {
         newState[action.comment.imageId].comments = {};
         newState[action.comment.imageId].comments[action.comment.id] = action.comment;
       }
-
       return newState
     case REMOVE_COMMENT:
       delete newState[action.comment.imageId].comments[action.comment.id]

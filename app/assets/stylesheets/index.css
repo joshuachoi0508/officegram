@@ -101,12 +101,13 @@
 .comment-divider {
   background: #efefef;
   height: 1px;
+  margin-top: 5px;
 }
 
 .comment-and-username {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 }
 
 .comment-username {

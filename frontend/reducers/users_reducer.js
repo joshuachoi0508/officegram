@@ -12,6 +12,11 @@ import {
   RECEIVE_LIKE,
   REMOVE_LIKE
 } from '../actions/like_actions';
+import {
+  RECEIVE_COMMENT,
+  REMOVE_COMMENT
+} from '../actions/comment_actions';
+
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)

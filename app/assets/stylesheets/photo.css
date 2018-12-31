@@ -16,6 +16,8 @@
 }
 
 .photo-and-info {
+  display: flex;
+  align-items: center;
   background: black;
 }
 
@@ -49,7 +51,9 @@
 .caption-and-comment {
   width: 287px;
   height: 65%;
+  max-height: 390px;
   padding: 12px 24px 12px 24px;
+  overflow-y: auto;
 }
 
 .likes-and-comment {

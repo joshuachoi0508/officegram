@@ -7,9 +7,11 @@ class Photo extends React.Component {
 
     this.state = {
       like: null,
-      count: null
+      count: null,
+      body: ""
     }
 
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderCount = this.renderCount.bind(this);
     this.renderDeleteButton = this.renderDeleteButton.bind(this);
   }
@@ -94,6 +96,63 @@ class Photo extends React.Component {
     )
   }
 
+  renderRemoveIcon(comment) {
+    if (comment.userId === this.props.currentUserId) {
+      return (
+        <img
+          className="remove-icon"
+          src={window.images.remove_comment}
+          onClick={() => this.props.deleteComment(comment.id)}
+        />
+      )
+    }
+
+    return (
+      null
+    )
+  }
+
+  renderComments(image) {
+    return (
+      Object.values(image.comments).map(comment => {
+        return (
+          <div key={`comments-${comment.id}`} className="comment-and-username">
+            <a className="comment-username-link" href={`#/users/${comment.userId}`}>
+              <p
+                key={`comment-user-id-${comment.id}`}
+                className="comment-username"
+              >
+                {comment.username}
+              </p>
+            </a>
+            <p
+              key={`comment-${comment.body}`}
+              className="comment-body"
+            >
+              {comment.body}
+            </p>
+            {this.renderRemoveIcon(comment)}
+          </div>
+        )
+      })
+    )
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.props.createComment(
+      {
+        body: this.state.body,
+        image_id: this.state.imageId
+      }
+    ).then(this.setState({ body: "" }))
+  }
+
+  update(field, imageId) {
+    return e => this.setState({ [field]: e.currentTarget.value, imageId: imageId })
+  };
+
   render(){
     if (!this.props.image) {
       return (
@@ -128,6 +187,12 @@ class Photo extends React.Component {
           </li>
           <div className="photo-divider"></div>
           <li className="caption-and-comment">
+            <ul className="comments">
+              {this.props.image.comments ?
+                this.renderComments(this.props.image) :
+                null
+              }
+            </ul>
           </li>
           <div className="photo-divider"></div>
           <li className="likes-and-comment">
@@ -146,6 +211,19 @@ class Photo extends React.Component {
             <label className="image-created-at">
               {this.props.image.createdAt.toUpperCase()}
             </label>
+            <form
+              className="comment-form"
+              onSubmit={this.handleSubmit}
+            >
+              <div className="comment-divider"></div>
+              <input
+                type="text"
+                className="comment-input"
+                placeholder="Add a comment..."
+                value={this.state.body}
+                onChange={this.update("body", this.props.image.id)}
+              />
+            </form>
           </li>
         </ul>
       </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import Photo from './photo';
 import { fetchImage, deleteImages, deleteImage } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,7 +25,9 @@ const mapDispatchToProps = dispatch => {
     deleteLike: (image_id, user_id) => dispatch(deleteLike(image_id, user_id)),
     deleteImages: () => dispatch(deleteImages()),
     deleteImage: imageId => dispatch(deleteImage(imageId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    createComment: comment => dispatch(createComment(comment)),
+    deleteComment: commentId => dispatch(deleteComment(commentId))
   })
 }
 
