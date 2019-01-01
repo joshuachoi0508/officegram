@@ -15,22 +15,13 @@ import {
   REMOVE_COMMENT
 } from '../actions/comment_actions';
 
+import merge from 'lodash/merge';
+
 const imagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  let newState = Object.assign({}, oldState);
+  let newState = merge({}, oldState);
 
   switch(action.type){
-    case RECEIVE_COMMENT:
-      if (newState[action.comment.imageId].comments) {
-        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
-      } else if (newState[action.comment.imageId]) {
-        newState[action.comment.imageId].comments = {};
-        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
-      }
-      return newState
-    case REMOVE_COMMENT:
-      delete newState[action.comment.imageId].comments[action.comment.id]
-      return newState
     case RECEIVE_LIKE:
       newState[action.like.imageId].likerIds.push(action.like.userId);
       return newState;
@@ -46,6 +37,17 @@ const imagesReducer = (oldState = {}, action) => {
       return newState;
     case REMOVE_IMAGES:
       return {};
+    case RECEIVE_COMMENT:
+      if (newState[action.comment.imageId].comments) {
+        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
+      } else if (newState[action.comment.imageId]) {
+        newState[action.comment.imageId].comments = {};
+        newState[action.comment.imageId].comments[action.comment.id] = action.comment;
+      }
+      return newState
+    case REMOVE_COMMENT:
+      delete newState[action.comment.imageId].comments[action.comment.id]
+      return newState
     default:
       return oldState;
   }

@@ -8,8 +8,8 @@ import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-  const image = state.entities.images[ownProps.options.imageId];
   const user = state.entities.users[ownProps.options.userId];
+  const image = state.entities.images[ownProps.options.imageId];
 
   return ({
     imageId: ownProps.options.imageId,
