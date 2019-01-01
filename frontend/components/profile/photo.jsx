@@ -6,8 +6,6 @@ class Photo extends React.Component {
     super(props)
 
     this.state = {
-      like: null,
-      count: null,
       body: ""
     }
 
@@ -21,14 +19,6 @@ class Photo extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-      if (this.props.image && this.state.like === null) {
-        this.setState({like: this.props.image.likerIds.includes(this.props.currentUserId)})
-      }
-
-      if (this.props.image && this.state.count === null) {
-        this.setState({count: this.props.image.likerIds.length})
-      }
-
       if (prevProps.imageId !== this.props.imageId) {
         this.props.fetchImage(this.props.imageId)
     }
@@ -51,34 +41,24 @@ class Photo extends React.Component {
     )
   }
 
-  renderHeart(image){
-    if (this.state.like === true) {
+  renderHeart(image) {
+    if (image.likerIds && image.likerIds.includes(this.props.currentUserId)) {
       return (
         <img
           className="heart"
           src={window.images.full_heart}
-          onClick={() =>
-            {
-              this.props.deleteLike(image.id)
-              this.setState({like: false, count: this.state.count - 1})
-            }
-          }
-          />
-        )
-      }
+          onClick={() => this.props.deleteLike(image.id)}
+        />
+      )
+    }
 
     return (
       <img
         className="heart"
         src={window.images.empty_heart}
-        onClick={() =>
-          {
-            this.props.createLike({image_id: image.id})
-            this.setState({like: true, count: this.state.count + 1})
-          }
-      }
+        onClick={() => this.props.createLike({ image_id: image.id })}
       />
-      )
+    )
   }
 
   renderCount(length) {
@@ -215,7 +195,7 @@ class Photo extends React.Component {
             </label>
             <label>
               { this.props.image.likerIds ?
-                this.renderCount(this.state.count) : null
+                this.renderCount(this.props.image.likerIds.length) : null
               }
             </label>
             <label className="image-created-at">
