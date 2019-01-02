@@ -12,11 +12,13 @@ class NavBar extends React.Component {
               <img className="main-logo" src={window.images.main_logo} />
             </Link>
           </li>
-          <li>
+          <li className="search-bar">
             <input type="text"
               placeholder="             search"
               className="search-input"
               />
+            <label className="result">
+            </label>
           </li>
           <li className="right-nav-bar">
             <a href="#/upload">

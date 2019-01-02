@@ -81,3 +81,11 @@
 .upload-logo:active {
   opacity: 0.3;
 }
+
+.result {
+  display: flex;
+  justify-content: center;
+  width: 225px;
+  position: absolute;
+  border-radius: 3px;
+}
