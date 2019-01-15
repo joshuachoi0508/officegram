@@ -21,3 +21,8 @@ A user can like and comment on different images. One user is only allowed to giv
 Users can upload an image on their profile page with caption. Users can also delete images from their profile by clicking the trash icon on the photo modal. 
 
 ![UploadGif](./app/assets/images/readme/upload.gif)
+
+### Follow
+Users can follow each other to get updates on their uploads on the index page.
+
+![FollowGif](./app/assets/images/readme/follow.gif)
