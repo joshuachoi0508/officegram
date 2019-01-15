@@ -34,7 +34,7 @@ export const fetchAllUsers = () => dispatch => (
     .then(users => dispatch(receiveAllUsers(users)))
 );
 
-export const removeSearchedUsers = () => dispatch => (
+export const discardSearchedUsers = () => dispatch => (
   dispatch(removeSearchedUsers())
 );
 

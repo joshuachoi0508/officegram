@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-import { fetchAllUsers } from '../../actions/user_actions'
+import { fetchAllUsers, discardSearchedUsers } from '../../actions/user_actions'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return ({
-        // searchedUsers: state.entities.searchedUsersReducer
+        searchedUsers: state.entities.searchedUsersReducer
     })
 };
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        discardSearchedUsers: () => dispatch(discardSearchedUsers())
     })
 };
 
