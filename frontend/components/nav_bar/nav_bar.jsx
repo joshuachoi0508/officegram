@@ -14,6 +14,10 @@ class NavBar extends React.Component {
     this.props.fetchAllUsers();
   }
 
+  update() {
+    return e => this.setState({ searchedWord: e.currentTarget.value})
+  };
+
   render(){
     return(
       <div className="nav-bar">
@@ -27,6 +31,7 @@ class NavBar extends React.Component {
             <input type="text"
               placeholder="             search"
               className="search-input"
+              onChange={this.update()}
               />
             <label className="result">
             </label>
