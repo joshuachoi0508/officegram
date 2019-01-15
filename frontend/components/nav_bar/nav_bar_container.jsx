@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-import { updateUser } from '../../actions/user_actions'
+import { fetchAllUsers } from '../../actions/user_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return ({
@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
+        fetchAllUsers: () => dispatch(fetchAllUsers())
     })
 };
 
