@@ -4,6 +4,7 @@ import { fetchAllUsers } from '../../actions/user_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return ({
+        // searchedUsers: state.entities.searchedUsersReducer
     })
 };
 
