@@ -4,7 +4,7 @@ import { fetchAllUsers, discardSearchedUsers } from '../../actions/user_actions'
 
 const mapStateToProps = (state) => {
     return ({
-        searchedUsers: state.entities.searchedUsersReducer
+        searchedUsers: Object.values(state.entities.searchedUsersReducer)
     })
 };
 

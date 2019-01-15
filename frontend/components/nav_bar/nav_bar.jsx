@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     }
   }
 
+
   componentDidUpdate(prevProps, prevState){
     if (this.state.searchedWord.length == 1 && prevState.searchedWord != this.state.searchedWord) {
       this.props.fetchAllUsers();
@@ -23,6 +24,23 @@ class NavBar extends React.Component {
   update() {
     return e => this.setState({ searchedWord: e.currentTarget.value})
   };
+
+  renderSearchResult(){
+    let people = this.props.searchedUsers.filter(personInfo => personInfo.username.toLocaleLowerCase().includes(this.state.searchedWord))
+    let searchResult = people.map(person => {
+      return(
+        <label class="searched-person" key={person.username}>
+          <img class="searched-person-img" src={person.photoUrl}></img> {person.username}
+        </label>
+      )
+    })
+
+    return(
+      <div className="result">
+        {searchResult}
+      </div>
+    )
+  }
 
   render(){
     return(
@@ -39,8 +57,7 @@ class NavBar extends React.Component {
               className="search-input"
               onChange={this.update()}
               />
-            <label className="result">
-            </label>
+            {this.renderSearchResult()}
           </li>
           <li className="right-nav-bar">
             <a href="#/upload">
