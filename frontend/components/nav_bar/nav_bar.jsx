@@ -16,7 +16,7 @@ class NavBar extends React.Component {
       this.props.fetchAllUsers();
     }
 
-    if (this.state.searchedWord.length == 0 && prevState.searchedWord.length != 0) {
+    if (this.state.searchedWord.length == 0 && prevProps.searchedUsers.length > 0) {
       this.props.discardSearchedUsers();
     }
   }
