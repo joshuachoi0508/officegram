@@ -29,9 +29,11 @@ class NavBar extends React.Component {
     let people = this.props.searchedUsers.filter(personInfo => personInfo.username.toLocaleLowerCase().includes(this.state.searchedWord))
     let searchResult = people.map(person => {
       return(
-        <label class="searched-person" key={person.username}>
-          <img class="searched-person-img" src={person.photoUrl}></img> {person.username}
-        </label>
+        <a href={`#/users/${person.id}`} className="searched-link" key={person.username}>
+          <label className="searched-person">
+            <img className="searched-person-img" src={person.photoUrl}></img> {person.username}
+          </label>
+        </a>
       )
     })
 

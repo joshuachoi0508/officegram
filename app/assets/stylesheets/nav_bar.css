@@ -83,24 +83,42 @@
 }
 
 .result {
+  font-family: 'helvetica';
   display: flex;
   justify-content: center;
   width: 225px;
   position: absolute;
   border-radius: 3px;
   flex-direction: column;
+  max-height: 362px;
+  overflow-y: overlay;
 }
 
 .searched-person-img {
   width: 32px;
   height: 32px;
   object-fit: cover;
+  margin: 10px 10px 10px 0;
+  border-radius: 30px;
 }
 
 .searched-person {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px 8px 11px;
+  height: 33px;
   border-right: solid 1px #e6e6e6;
   border-left: solid 1px #e6e6e6;
   border-bottom: solid 1px #e6e6e6;
   background: white;
 }
 
+.searched-person:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.searched-link {
+  text-decoration: none;
+  color: black;
+}
