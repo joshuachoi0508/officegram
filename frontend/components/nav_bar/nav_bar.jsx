@@ -8,6 +8,8 @@ class NavBar extends React.Component {
     this.state = {
       searchedWord: ""
     }
+
+    this.searchWordNone = this.searchWordNone.bind(this);
   }
 
 
@@ -25,6 +27,10 @@ class NavBar extends React.Component {
     return e => this.setState({ searchedWord: e.currentTarget.value})
   };
 
+  searchWordNone(){
+    this.setState({searchedWord: ""})
+  }
+
   renderSearchResult(){
     let people = this.props.searchedUsers.filter(personInfo => {
       if (this.state.searchedWord.length > 0) {
@@ -33,9 +39,15 @@ class NavBar extends React.Component {
         )
       }
     })
+
     let searchResult = people.map(person => {
       return(
-        <a href={`#/users/${person.id}`} className="searched-link" key={person.username}>
+        <a 
+        href={`#/users/${person.id}`} 
+        className="searched-link" 
+        key={person.username}
+        onClick={this.searchWordNone}
+        >
           <label className="searched-person">
             <img className="searched-person-img" src={person.photoUrl}></img> {person.username}
           </label>
@@ -64,6 +76,7 @@ class NavBar extends React.Component {
               placeholder="             search"
               className="search-input"
               onChange={this.update()}
+              value={this.state.searchedWord}
               />
             {this.renderSearchResult()}
           </li>
