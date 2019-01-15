@@ -23,6 +23,6 @@ Users can upload an image on their profile page with a caption. Users can also d
 ![UploadGif](./app/assets/images/readme/upload.gif)
 
 ### Follow
-Users can follow each other to get updates on their uploads on the index page.
+Users can follow each other to get updates on each others' uploads on the index page.
 
 ![FollowGif](./app/assets/images/readme/follow.gif)
