@@ -26,7 +26,13 @@ class NavBar extends React.Component {
   };
 
   renderSearchResult(){
-    let people = this.props.searchedUsers.filter(personInfo => personInfo.username.toLocaleLowerCase().includes(this.state.searchedWord))
+    let people = this.props.searchedUsers.filter(personInfo => {
+      if (this.state.searchedWord.length > 0) {
+        return(
+          personInfo.username.toLocaleLowerCase().includes(this.state.searchedWord)
+        )
+      }
+    })
     let searchResult = people.map(person => {
       return(
         <a href={`#/users/${person.id}`} className="searched-link" key={person.username}>
