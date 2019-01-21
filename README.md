@@ -7,20 +7,10 @@ OfficeGram is a single-page image sharing web-app inspired by Instagram. It has 
 ![IntroGif](./app/assets/images/readme/intro_gif.gif)
 
 # Feature and Implementation
-### User Search
-Users can search for other users based on their username and visit their profile page.
-
-![SearchGif](./app/assets/images/readme/search.gif)
-
-### Like and comment
-A user can like and comment on different images. One user is only allowed to give one like per image but can comment as many times as he/she wishes per image. A like/comment can be removed easily by clicking the like button again/clicking the x button next to the comment.
-
-![CommentLikeGif](./app/assets/images/readme/like_comment.gif)
-
 ### Upload
 Users can upload an image on their profile page with a caption. Users can also delete images from their profile by clicking the trash icon on the photo modal. 
 
-For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud. In upload component, I have a handleFile method that renders error messages based on file type and render preview of the selected image. 
+For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud. In upload component, I have a handleFile method that renders error messages based on file type and renders preview of the selected image. 
 
 ```javascript
   handleFile(e) {
@@ -47,7 +37,7 @@ For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud
 ![UploadGif](./app/assets/images/readme/upload.gif)
 
 ### Follow
-Users can follow each other to get updates on each others' uploads on the index page. For this feature, I used rails associations to find current user's followees' photos. 
+Users can follow each other to get updates on each others' uploads on the index page. For this feature, I used rails associations to find current user's followees photos. 
 
 ```ruby
   has_many :followings,
@@ -67,3 +57,12 @@ Users can follow each other to get updates on each others' uploads on the index 
 
 
 ![FollowGif](./app/assets/images/readme/follow.gif)
+### User Search
+Users can search for other users based on their username and visit their profile page.
+
+![SearchGif](./app/assets/images/readme/search.gif)
+
+### Like and comment
+A user can like and comment on different images. One user is only allowed to give one like per image but can comment as many times as he/she wishes per image. A like/comment can be removed easily by clicking the like button again/clicking the x button next to the comment.
+
+![CommentLikeGif](./app/assets/images/readme/like_comment.gif)
