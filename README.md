@@ -20,6 +20,30 @@ A user can like and comment on different images. One user is only allowed to giv
 ### Upload
 Users can upload an image on their profile page with a caption. Users can also delete images from their profile by clicking the trash icon on the photo modal. 
 
+For this feature, I used AWS to store photos on the cloud. In upload component, I have a handleFile method that renders error messages based on file type and render preview of the selected image. 
+
+```javascript
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const fileExtension = file.name.split('.').pop();
+      const extensions = ['jpg', 'png', 'JPG', 'PNG'];
+
+      if (extensions.includes(fileExtension)) {
+        this.setState({imageFile: file, imageUrl: reader.result, uploadErrors: [] });
+      } else {
+        this.setState({uploadErrors: ['Please select a jpg or png file']})
+      }
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+```
+
 ![UploadGif](./app/assets/images/readme/upload.gif)
 
 ### Follow
