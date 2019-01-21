@@ -47,6 +47,23 @@ For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud
 ![UploadGif](./app/assets/images/readme/upload.gif)
 
 ### Follow
-Users can follow each other to get updates on each others' uploads on the index page.
+Users can follow each other to get updates on each others' uploads on the index page. For this feature, I used rails associations to find current user's followees' photos. 
+
+```ruby
+  has_many :followings,
+    through: :followeeships,
+    source: :following
+
+  has_many :following_images,
+    through: :followings,
+    source: :images
+
+  has_many :followeeships,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: 'Follow',
+    dependent: :destroy
+```
+
 
 ![FollowGif](./app/assets/images/readme/follow.gif)
