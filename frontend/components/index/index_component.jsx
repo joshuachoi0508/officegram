@@ -28,7 +28,7 @@ class Index extends React.Component {
     this.renderCount = this.renderCount.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderRemoveIcon = this.renderRemoveIcon.bind(this);
-    this.renderCaption = this.renderCaption.bind(this); 
+    this.renderCaption = this.renderCaption.bind(this);
   }
 
   componentDidMount(){
