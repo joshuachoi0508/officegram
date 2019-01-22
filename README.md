@@ -60,6 +60,13 @@ Users can follow each other to get updates on each others' uploads on the index 
 ### User Search
 Users can search for other users based on their username and visit their profile page. For this feature, I used user input and rails Active Record querying to fetch necessary users to render as the search result.
 
+```ruby
+  def index
+    @users = User.where("lower(username)", "%#{params[:username].downcase}%")
+    render :index
+  end
+```
+
 ![SearchGif](./app/assets/images/readme/search.gif)
 
 ### Like and comment
