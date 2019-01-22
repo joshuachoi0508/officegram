@@ -35,7 +35,7 @@ class NavBar extends React.Component {
     let people = this.props.searchedUsers.filter(personInfo => {
       if (this.state.searchedWord.length > 0) {
         return(
-          personInfo.username.toLocaleLowerCase().includes(this.state.searchedWord.toLocaleLowerCase())
+          this.props.searchedUsers
         )
       }
     })
