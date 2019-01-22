@@ -62,7 +62,7 @@ Users can search for other users based on their username and visit their profile
 
 ```ruby
   def index
-    @users = User.where("lower(username) LIKE ?", "#{params[:username].downcase}%")
+    @users = User.where("lower(username) LIKE ?", "%#{params[:username].downcase}%")
     render :index
   end
 ```
