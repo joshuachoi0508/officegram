@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.where("lower(username)", "%#{params[:username].downcase}%")
+    @users = User.where("lower(username) LIKE ?", "#{params[:username].downcase}%")
     render :index
   end
 
