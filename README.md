@@ -10,7 +10,7 @@ OfficeGram is a single-page image sharing web-app inspired by Instagram. It has 
 ### Upload
 Users can upload an image on their profile page with a caption. Users can also delete images from their profile by clicking the trash icon on the photo modal. 
 
-For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud. In upload component, I have a handleFile method that renders error messages based on file type and renders preview of the selected image. 
+For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud. In the upload component, I have a handleFile method that renders error messages based on file type and renders the preview of the selected image. 
 
 ```javascript
   handleFile(e) {
@@ -37,7 +37,9 @@ For this feature, I used `Amazon Web Services(AWS)` to store photos on the cloud
 ![UploadGif](./app/assets/images/readme/upload.gif)
 
 ### Follow
-Users can follow each other to get updates on each others' uploads on the index page. For this feature, I used rails associations to find current user's followees photos. 
+Users can follow each other to get updates on each others' uploads on the index page. 
+
+For this feature, I used rails associations to find the current user's followees photos. 
 
 ```ruby
   has_many :followings,
@@ -58,7 +60,9 @@ Users can follow each other to get updates on each others' uploads on the index 
 
 ![FollowGif](./app/assets/images/readme/follow.gif)
 ### User Search
-Users can search for other users based on their username and visit their profile page. For this feature, I used user input and rails Active Record querying to fetch necessary users to render as the search result.
+Users can search for other users based on their username and visit their profile page. 
+
+For this feature, I used user input and rails Active Record querying to fetch necessary users to render as the search result.
 
 ```ruby
   def index
