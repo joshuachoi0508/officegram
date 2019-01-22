@@ -16,9 +16,10 @@ export const updateUser = user => (
   })
 );
 
-export const fetchAllUsers = () => (
+export const fetchAllUsers = username => (
   $.ajax({
     method: 'GET',
-    url: 'api/users'
+    url: 'api/users',
+    data: { username }
   })
 );

@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        fetchAllUsers: (username) => dispatch(fetchAllUsers(username)),
         discardSearchedUsers: () => dispatch(discardSearchedUsers())
     })
 };
