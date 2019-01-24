@@ -109,8 +109,11 @@ class Photo extends React.Component {
       Object.values(image.comments).map(comment => {
         return (
           <div key={`comments-${comment.id}`} className="comment-and-username">
-            <label>
-              <a className="comment-username-link" href={`#/users/${comment.userId}`}>
+            <label onClick={() => this.props.closeModal()}>
+              <a 
+              className="comment-username-link" 
+              href={`#/users/${comment.userId}`}
+              >
                 {comment.username}
               </a>
               {comment.body}
