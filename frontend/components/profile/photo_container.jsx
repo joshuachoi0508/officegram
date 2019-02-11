@@ -4,7 +4,7 @@ import Photo from './photo';
 import { fetchImage, deleteImages, deleteImage } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import { createComment, deleteComment } from '../../actions/comment_actions';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
 
