@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react'; 
+import React from 'react';
 import Photo from './photo';
 import { fetchImage, deleteImages, deleteImage } from '../../actions/image_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
