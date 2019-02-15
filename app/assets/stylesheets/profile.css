@@ -180,6 +180,8 @@
   margin-top: 5px;
   max-width: 450px;
   line-height: 1.2;
+  max-height: 60px;
+  overflow: overlay;
 }
 
 .edit-submit-errors {
