@@ -110,6 +110,7 @@ class EditProfile extends React.Component {
                     className="edit-username-input"
                     value={this.state.username}
                     onChange={this.update("username")}
+                    disabled
                     />
                 </label>
                 <label className="bio-label">
