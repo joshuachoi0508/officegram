@@ -48,19 +48,23 @@ class EditProfile extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const formData = new FormData();
-
-    formData.append('user[bio]', this.state.bio);
-    formData.append('user[username]', this.state.username);
-    formData.append('user[id]', this.state.id);
-
-    if (this.state.photoFile) {
-      formData.append('user[photo]', this.state.photoFile);
+    if (this.state.bio.length > 150) {
+      this.setState({ uploadErrors: ['Bio cannot be longer than 150 characters'] })
+    } else {
+      const formData = new FormData();
+  
+      formData.append('user[bio]', this.state.bio);
+      formData.append('user[username]', this.state.username);
+      formData.append('user[id]', this.state.id);
+  
+      if (this.state.photoFile) {
+        formData.append('user[photo]', this.state.photoFile);
+      }
+  
+      this.setState({loading: true})
+      this.props.updateUser(formData)
+        .then(() => this.props.history.push("/profile"))
     }
-
-    this.setState({loading: true})
-    this.props.updateUser(formData)
-      .then(() => this.props.history.push("/profile"))
   }
 
   renderErrors(){
