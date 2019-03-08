@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'rails_12factor'
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
