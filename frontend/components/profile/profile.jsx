@@ -9,6 +9,10 @@ class Profile extends React.Component {
 
   componentDidMount(){
     window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      window.addEventListener('click', this.closeDropdown)
+    });
   }
 
   componentDidUpdate(prevProps){
