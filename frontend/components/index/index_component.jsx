@@ -36,7 +36,7 @@ class Index extends React.Component {
     this.setState({loading: true})
     this.props.fetchImages(this.state.offset)
       .then(() => this.setState({loading: false}))
-  } 
+  }
 
   handleSubmit(e){
     e.preventDefault();
