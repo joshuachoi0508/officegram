@@ -55,14 +55,15 @@
   border: 1px solid lightgray;
   border-radius: 8px;
   background: white;
-  align-items: center;
 }
 
 #image-preview {
   margin: auto;
   height: auto;
-  max-width: 400px;
-  max-height: 400px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .body-input {
